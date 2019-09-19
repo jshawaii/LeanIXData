@@ -1,0 +1,6 @@
+{
+	"name": "Sun-SelfHostedIntegrationRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "PictureFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "EarthPublicFolder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"folderPath": "Image Catalogs"
+			}
+		}
+	}
+}
