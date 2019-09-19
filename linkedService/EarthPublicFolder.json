@@ -1,0 +1,18 @@
+{
+	"name": "EarthPublicFolder",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "\\\\thomsonhills.com\\earth\\public",
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "\\\\thomsonhills.com\\earth\\public",
+			"userId": "administrator",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3ZDZiYzc5Zi05MjNmLTQ5ZTMtOGYyNS0xMDAxNmFhY2Q2OWIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Sun-SelfHostedIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
