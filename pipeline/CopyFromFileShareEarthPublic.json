@@ -4,7 +4,7 @@
 		"description": "Copy files from \\\\earth\\public",
 		"activities": [
 			{
-				"name": "CopyFromFileShareSunPublic",
+				"name": "CopyFromFileShareEarthPublic",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
