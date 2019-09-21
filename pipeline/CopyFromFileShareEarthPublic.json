@@ -34,7 +34,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "PictureFiles",
+						"referenceName": "FileSharePictureFiles",
 						"type": "DatasetReference"
 					}
 				],
