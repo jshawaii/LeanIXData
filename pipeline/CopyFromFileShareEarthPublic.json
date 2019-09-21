@@ -1,9 +1,10 @@
 {
-	"name": "pipeline1",
+	"name": "CopyFromFileShareEarthPublic",
 	"properties": {
+		"description": "Copy files from \\\\earth\\public",
 		"activities": [
 			{
-				"name": "CopyFromFileShareSunPublic",
+				"name": "CopyFromFileShareEarthPublic",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -33,7 +34,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "PictureFiles",
+						"referenceName": "FileSharePictureFiles",
 						"type": "DatasetReference"
 					}
 				],
