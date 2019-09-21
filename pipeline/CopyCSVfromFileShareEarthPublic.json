@@ -42,7 +42,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSVFile",
+						"referenceName": "Input_FileShare_CSV",
 						"type": "DatasetReference"
 					}
 				],
@@ -66,6 +66,17 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.*"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
@@ -79,6 +90,12 @@
 					},
 					"enableStaging": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Input_FileShare_TXT",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "Output_CSV_TXT_File_to_ADLSv2_Raw",

@@ -1,5 +1,5 @@
 {
-	"name": "PictureFile",
+	"name": "Output_PictureFile_to_ADLSv2_Raw",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MS_MAC_ADLSv2",

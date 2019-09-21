@@ -1,5 +1,5 @@
 {
-	"name": "FileSharePictureFiles",
+	"name": "Input_FileSharePictureFiles",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "EarthPublicFolder",

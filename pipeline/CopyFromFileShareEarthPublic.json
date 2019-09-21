@@ -34,13 +34,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "FileSharePictureFiles",
+						"referenceName": "Input_FileSharePictureFiles",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "PictureFile",
+						"referenceName": "Output_PictureFile_to_ADLSv2_Raw",
 						"type": "DatasetReference"
 					}
 				]
