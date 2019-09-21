@@ -2,7 +2,7 @@
 	"name": "PictureFile",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "MS_MAC_AzureDataLakeStorage",
+			"referenceName": "MS_MAC_ADLSv2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": "images",
 				"fileSystem": "raw"
 			}
 		}
