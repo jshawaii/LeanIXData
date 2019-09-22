@@ -1,5 +1,5 @@
 {
-	"name": "CopyFromFileShareEarthPublic",
+	"name": "Copy_Images_fromFileShareEarthPublic_To_adlsv2Raw",
 	"properties": {
 		"description": "Copy files from \\\\earth\\public",
 		"activities": [
