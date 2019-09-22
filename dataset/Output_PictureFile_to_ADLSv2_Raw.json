@@ -1,16 +1,17 @@
 {
-	"name": "FileSharePictureFiles",
+	"name": "Output_PictureFile_to_ADLSv2_Raw",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "EarthPublicFolder",
+			"referenceName": "MS_MAC_ADLSv2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "FileServerLocation",
-				"folderPath": "Image Catalogs"
+				"type": "AzureBlobFSLocation",
+				"folderPath": "images",
+				"fileSystem": "raw"
 			}
 		}
 	}
