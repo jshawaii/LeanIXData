@@ -1,0 +1,22 @@
+{
+	"name": "Source_TXT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "EarthPublicFolder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"folderPath": "Development/demo data/demo txt files"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
