@@ -1,10 +1,9 @@
 {
-	"name": "Copy_CSV_fromFileShareEarthPublic",
+	"name": "Copy_TXT_fromFileShareEarth_to_ADLSv2Raw",
 	"properties": {
-		"description": "Copy CSV and txt files",
 		"activities": [
 			{
-				"name": "Copy CSV",
+				"name": "Copy_TXT",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -42,13 +41,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_FileShare_CSV",
+						"referenceName": "Input_FileShare_TXT",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_CSV_adlsv2_raw",
+						"referenceName": "Output_TXT_adlsv2_Raw",
 						"type": "DatasetReference"
 					}
 				]

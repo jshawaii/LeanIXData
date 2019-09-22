@@ -1,5 +1,5 @@
 {
-	"name": "Output_TXT_adlsv2_Raw",
+	"name": "Output_CSV_adlsv2_raw",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MS_MAC_ADLSv2",
@@ -10,53 +10,42 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "csv/demo txt files",
+				"folderPath": "csv/demo csv files",
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "id",
 				"type": "String"
 			},
 			{
-				"name": "first_name",
 				"type": "String"
 			},
 			{
-				"name": "last_name",
 				"type": "String"
 			},
 			{
-				"name": "email",
 				"type": "String"
 			},
 			{
-				"name": "gender",
 				"type": "String"
 			},
 			{
-				"name": "Address",
 				"type": "String"
 			},
 			{
-				"name": "City",
 				"type": "String"
 			},
 			{
-				"name": "State",
 				"type": "String"
 			},
 			{
-				"name": "zip",
 				"type": "String"
 			},
 			{
-				"name": "Telephone",
 				"type": "String"
 			}
 		]
