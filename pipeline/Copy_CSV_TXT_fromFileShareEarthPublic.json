@@ -1,5 +1,5 @@
 {
-	"name": "CopyCSVfromFileShareEarthPublic",
+	"name": "Copy_CSV_TXT_fromFileShareEarthPublic",
 	"properties": {
 		"description": "Copy CSV and txt files",
 		"activities": [
