@@ -1,0 +1,20 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Output_CSV_TXT_File_to_ADLSv2_Raw",
+						"type": "DatasetReference"
+					},
+					"name": "SourceMockarooPersons"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"script": "\nparameters{\n\t as string\n}\nsource(output(\n\t\tid as integer '000',\n\t\tfirst_name as string,\n\t\tlast_name as string,\n\t\temail as string,\n\t\tgender as string,\n\t\tAddress as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tzip as integer '000',\n\t\tTelephone as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: true,\n\tlimit: 100,\n\tdateFormats: ['MM/dd/yyyy'],\n\ttimestampFormats: ['MM-dd-yyyy HH:mm:ss'],\n\tpreferredIntegralType: 'integer',\n\tpreferredFractionalType: 'decimal') ~> SourceMockarooPersons"
+		}
+	}
+}
