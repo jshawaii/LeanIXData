@@ -1,5 +1,5 @@
 {
-	"name": "Output_CSV_TXT_File_to_ADLSv2_Raw",
+	"name": "Output_CSV_adlsv2_raw",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MS_MAC_ADLSv2",
@@ -15,9 +15,39 @@
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
 	}
 }

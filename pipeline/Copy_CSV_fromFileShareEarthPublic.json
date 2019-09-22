@@ -1,10 +1,10 @@
 {
-	"name": "CopyFromFileShareEarthPublic",
+	"name": "Copy_CSV_fromFileShareEarthPublic",
 	"properties": {
-		"description": "Copy files from \\\\earth\\public",
+		"description": "Copy CSV and txt files",
 		"activities": [
 			{
-				"name": "CopyFromFileShareEarthPublic",
+				"name": "Copy CSV",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -17,30 +17,38 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "BinarySource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "FileServerReadSettings",
 							"recursive": true,
 							"wildcardFileName": "*.*"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ""
 						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_FileSharePictureFiles",
+						"referenceName": "Input_FileShare_CSV",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_PictureFile_to_ADLSv2_Raw",
+						"referenceName": "Output_CSV_adlsv2_raw",
 						"type": "DatasetReference"
 					}
 				]
