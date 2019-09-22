@@ -1,0 +1,28 @@
+{
+	"name": "Run_Ingest_MockPersons_into_SQLDB",
+	"properties": {
+		"description": "Runs the MpaMockPersonsCSVtoSQLDB Data Flow that ingests the data from the CSV file in ADLSv2 into SQLDB.",
+		"activities": [
+			{
+				"name": "MapMockPersonsCSVtoSQLDB",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "MapMockPersonsCSVtoSQLDB",
+						"type": "DataFlowReference"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
