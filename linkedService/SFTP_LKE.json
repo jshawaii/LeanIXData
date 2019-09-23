@@ -1,0 +1,17 @@
+{
+	"name": "SFTP_LKE",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "SFTP to the public FTP folder on www.lke-electric.com on a Linux box",
+		"annotations": [],
+		"type": "Sftp",
+		"typeProperties": {
+			"host": "www.lke-electric.com",
+			"port": 22,
+			"skipHostKeyValidation": true,
+			"authenticationType": "Basic",
+			"userName": "administrator",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkpTLUFERlYyXzNhOGMyZWNhLWEwZmItNGIxMy1iY2Q3LTQ4NWI4YTg5Yzg2MiINCn0="
+		}
+	}
+}
