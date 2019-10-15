@@ -1,0 +1,13 @@
+{
+	"name": "LeanIX",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://hawaii.leanix.net/services/pathfinder/v1/factSheets",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
