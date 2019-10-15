@@ -5,6 +5,16 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"pageSize": {
+				"type": "int",
+				"defaultValue": 40
+			},
+			"permissions": {
+				"type": "bool",
+				"defaultValue": false
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"schema": []
