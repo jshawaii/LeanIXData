@@ -27,4 +27,5 @@ The capabilities built into this lab are:
 
 <a href="https://stackoverflow.com/questions/46959338/error-executing-openrowset-bulk-azure-sql-database">Discussion regarding Operating System error(null)</a>
 
+<a href="https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/02/23/loading-files-from-azure-blob-storage-into-azure-sql-database/">Loading files from Azure Blob Storage into Azure SQL Database</a>
 
