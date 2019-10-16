@@ -27,7 +27,7 @@
 					"sink": {
 						"type": "JsonSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
 							"type": "JsonWriteSettings",
@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_HI_LeanIX_JSON",
+						"referenceName": "Output_LeanIX_JSON_to_BLOB",
 						"type": "DatasetReference"
 					}
 				]
