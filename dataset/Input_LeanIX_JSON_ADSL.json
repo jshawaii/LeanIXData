@@ -1,5 +1,5 @@
 {
-	"name": "Output_HI_LeanIX_JSON",
+	"name": "Input_LeanIX_JSON_ADSL",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MS_MAC_ADLSv2",

@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "HI_LeanIX_JSON",
+						"referenceName": "Output_HI_LeanIX_JSON",
 						"type": "DatasetReference"
 					}
 				]
