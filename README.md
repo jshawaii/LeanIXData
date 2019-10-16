@@ -27,6 +27,8 @@ The capabilities built into this lab are:
 
 <a href="https://stackoverflow.com/questions/46959338/error-executing-openrowset-bulk-azure-sql-database">Discussion regarding Operating System error(null)</a>
 
+<a href="https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory">Service-to-service authentication with Azure Data Lake Storage using AAD</a>
+
 <a href="https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/02/23/loading-files-from-azure-blob-storage-into-azure-sql-database/">Loading files from Azure Blob Storage into Azure SQL Database</a>
 
 <a href="https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store">Load data from Azure Data Lake into SQL DW</a>
