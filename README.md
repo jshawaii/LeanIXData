@@ -23,4 +23,6 @@ The capabilities built into this lab are:
 
 <a href="https://stackoverflow.com/questions/53859600/handling-bearer-tokens-in-azure-pipeline-for-http-objects">Handling Bearer Tokens in Azure Pipeline</a>
 
+<a href="https://bertwagner.com/2018/05/22/converting-json-to-sql-server-create-table-statements/">Creating SQL Table schemas from JSON</a>
+
 
