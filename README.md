@@ -29,5 +29,7 @@ The capabilities built into this lab are:
 
 <a href="https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/02/23/loading-files-from-azure-blob-storage-into-azure-sql-database/">Loading files from Azure Blob Storage into Azure SQL Database</a>
 
+<a href="https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store">Load data from Azure Data Lake into SQL DW</a>
+
 <a href="https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/">Dark mode for SSMS 16/17/18</a>
 
