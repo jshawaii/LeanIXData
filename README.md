@@ -1,4 +1,4 @@
-# Data-Factory
+# Data Factory Demo Environment
 Source control for js-ADF in MAC
 
 This is a lab environment built for demos and test purposes using Azure Data Factory.
@@ -19,4 +19,8 @@ The capabilities built into this lab are:
 3) Data Flow (In Public Preview at time of build)
   a. Maps the CSV file for MockPersons to a SQLDB table
   
-** More to come **
+## References
+
+<a href="https://stackoverflow.com/questions/53859600/handling-bearer-tokens-in-azure-pipeline-for-http-objects">Handling Bearer Tokens in Azure Pipeline</a>
+
+
