@@ -1,0 +1,22 @@
+{
+	"name": "Output_CSV_From_VM3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MS_MAC_ADLSv2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "transient"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

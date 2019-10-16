@@ -1,0 +1,12 @@
+{
+	"name": "Input_LEANIX_API",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
