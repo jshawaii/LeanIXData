@@ -25,8 +25,14 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate"
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"quoteAllText": true
+						}
 					},
 					"enableStaging": false
 				},
@@ -38,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_SQLDB",
+						"referenceName": "HI_LeanIX_JSON",
 						"type": "DatasetReference"
 					}
 				]

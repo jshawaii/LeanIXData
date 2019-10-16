@@ -1,0 +1,18 @@
+{
+	"name": "HI_LeanIX_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MS_MAC_ADLSv2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "json",
+				"fileSystem": "raw"
+			}
+		}
+	}
+}
