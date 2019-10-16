@@ -2,12 +2,11 @@
 	"name": "ADFLabBlob",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"description": "URI SAS expires 10/2020",
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"sasUri": "https://saadflabblob.blob.core.windows.net/raw/data_c5b6a598-31c3-4384-ad01-9eb53345505e_2330cf89-5510-4ec4-8229-e88603c984e3.json",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkpTLUFERlYyXzAyNTVlZjc5LWFhZGYtNDJlNC05NzUyLTAyODY5NTgyMjE5ZCINCn0="
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=saadflabblob;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkpTLUFERlYyXzQ2NGIyMDZlLTI3MDktNDM4OS04Y2U4LWExNzAwNTVhOWY1MiINCn0="
 		}
 	}
 }
