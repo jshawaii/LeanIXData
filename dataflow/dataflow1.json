@@ -1,0 +1,28 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Input_LeanIX_JSON_ADSL",
+						"type": "DatasetReference"
+					},
+					"name": "LeanIXADSLJSON"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Output_LeanIX_SQLDB",
+						"type": "DatasetReference"
+					},
+					"name": "DestLeanIXSQLDB"
+				}
+			],
+			"transformations": [],
+			"script": "\n\nsource(output(\n\t\tstatus as string,\n\t\terrors as string[],\n\t\ttotal as string,\n\t\tdata as (id as string, name as string, description as string, displayName as string, fullName as string, type as string, tags as (id as string, tagGroup as (id as string, name as string, shortName as string, description as string, mode as string, restrictToFactSheetTypes as string[]), name as string, description as string, bgColor as string, status as string)[], fields as (name as string, data as (type as string, phases as (startDate as string, phase as string)[]), dataType as string)[], relations as string[], completion as (type as string, completion as double, percentage as string, subCompletions as (section.information as (type as string, completion as double, percentage as string, subCompletions as (subsection.nameDescription.label as (type as string, completion as double, percentage as string), subsection.lifecycle.label as (type as string, completion as double, percentage as string), subsection.successors.label as (type as string, completion as double, percentage as string), subsection.predecessors.label as (type as string, completion as double, percentage as string))), section.projectSetup as (type as string, completion as double, percentage as string, subCompletions as (subsection.projectProviders.label as (type as string, completion as double, percentage as string), subsection.projectBenefit.label as (type as string, completion as double, percentage as string), subsection.budgetCosts.label as (type as string, completion as double, percentage as string))), section.dependencies as (type as string, completion as double, percentage as string, subCompletions as (subsection.children.label as (type as string, completion as double, percentage as string), subsection.requiredBy.label as (type as string, completion as double, percentage as string), subsection.parents.label as (type as string, completion as double, percentage as string), subsection.requires.label as (type as string, completion as double, percentage as string))), section.projectEnvironment as (type as string, completion as double, percentage as string, subCompletions as (subsection.factSheetsAffected.label__ as (type as string, completion as double, percentage as string), subsection.projectValueRisk.label as (type as string, completion as double, percentage as string), subsection.factSheetsAffected.label as (type as string, completion as double, percentage as string), subsection.factSheetsAffected.label___ as (type as string, completion as double, percentage as string), subsection.factSheetsAffected.label____ as (type as string, completion as double, percentage as string), subsection.factSheetsAffected.label_ as (type as string, completion as double, percentage as string))))), createdAt as string, updatedAt as string, documents as string[], status as string, level as string, score as string, rev as string, naFields as string[], subscriptions as string[], permittedReadACL as string[], permittedWriteACL as string[])[],\n\t\tcursor as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> LeanIXADSLJSON\nLeanIXADSLJSON sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\trecreate:true,\n\tformat: 'table',\n\tmapColumn(\n\t\tdata\n\t)) ~> DestLeanIXSQLDB"
+		}
+	}
+}

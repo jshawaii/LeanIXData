@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Copy_JSON_fromADSL_to_SQLDB",
 	"properties": {
 		"activities": [
 			{
@@ -23,11 +23,20 @@
 							"wildcardFileName": "*.json"
 						}
 					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "Input_LeanIX_JSON_ADSL",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Input_LeanIX_JSON_SQLDB",
 						"type": "DatasetReference"
 					}
 				]
