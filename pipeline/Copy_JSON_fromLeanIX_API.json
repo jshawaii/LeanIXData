@@ -15,6 +15,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
 					"sink": {
 						"type": "JsonSink",
 						"storeSettings": {
@@ -27,6 +33,12 @@
 					},
 					"enableStaging": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Input_LEANIX_API",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "Output_HI_LeanIX_JSON",
