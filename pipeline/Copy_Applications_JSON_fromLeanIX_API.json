@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_Hawaii_LeanIX",
+				"name": "Copy_Hawaii_LeanIX_Application",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -21,7 +21,7 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
 						"additionalHeaders": {
-							"Authorization": "Bearer eyJraWQiOiJlYTExZDFmNGRhZGU1MzFmNDgwYjdmNWMzNThlZDUxZiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJqdXNzaS5zaXBvbGFAaGF3YWlpLmdvdiIsInByaW5jaXBhbCI6eyJpZCI6Ijk5NWU4MmVjLTNkMzYtNGRkYS1hNjA5LTk0Y2YyNzZiNDk3NyIsInVzZXJuYW1lIjoianVzc2kuc2lwb2xhQGhhd2FpaS5nb3YiLCJyb2xlIjoiQUNDT1VOVFVTRVIiLCJzdGF0dXMiOiJBQ1RJVkUiLCJhY2NvdW50Ijp7ImlkIjoiZTY5MWM3ZmMtMDEyMC00NjViLTkwNWEtMmIyMjFmNWRiNDAzIiwibmFtZSI6IlN0YXRlIG9mIEhhd2FpaSJ9LCJwZXJtaXNzaW9uIjp7ImlkIjoiNTcyYTM2NjQtYjY2MC00NjFlLTg4MDMtODJkZmYzOTI1NjI0Iiwid29ya3NwYWNlSWQiOiJmNzU4ZmJiNC1hNWVjLTQzZjctYmJhZC1hYzMyNTRmMDE5NzYiLCJ3b3Jrc3BhY2VOYW1lIjoiU3RhdGVvZkhhd2FpaVNhbmRib3giLCJyb2xlIjoiQURNSU4iLCJjdXN0b21lclJvbGVzIjpudWxsLCJhY2Nlc3NDb250cm9sRW50aXRpZXMiOm51bGwsInN0YXR1cyI6IkFDVElWRSJ9fSwianRpIjoiM2YwMTNhYmMtYTg2MC00ZWQwLTg4ZDQtMmNlZjRkYzAxZGYzIiwiZXhwIjoxNTcxNDE4NzQ5LCJpbnN0YW5jZVVybCI6Imh0dHBzOi8vaGF3YWlpLmxlYW5peC5uZXQifQ.Ps_-Sx4mfyGTjbZZ8VwuOeapvY7Ul3C6GQx8NtfOyH6QDv67Mw3Jg27uah7LbxcaLe4rpqSLnnKZZkDeONXp_FgZqHOlUJEy5l70cqQNxX4KnriBRyYUTHZxyXZEn4EJigTkKxaBD1CBJRsRiFmRex4Azp9R-J3O9PXdCmy0s29IwQgpBg9h3WHnvDTdjd4HiC0XltR4GAKXa1ylFTmhZPo3UfcWL_da0qUhWpdiR4jOQxBYxhXIZ_MPVCf83wVvnPggoqobPi8exQMcbl19JLCyTp78-M5dR3fu2-fmOV4oqsyrDdMD34lmqiczpkwm7IAbGVMucU2aOubh1OZ7XA"
+							"Authorization": "Bearer eyJraWQiOiJlYTExZDFmNGRhZGU1MzFmNDgwYjdmNWMzNThlZDUxZiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJqdXNzaS5zaXBvbGFAaGF3YWlpLmdvdiIsInByaW5jaXBhbCI6eyJpZCI6Ijk5NWU4MmVjLTNkMzYtNGRkYS1hNjA5LTk0Y2YyNzZiNDk3NyIsInVzZXJuYW1lIjoianVzc2kuc2lwb2xhQGhhd2FpaS5nb3YiLCJyb2xlIjoiQUNDT1VOVFVTRVIiLCJzdGF0dXMiOiJBQ1RJVkUiLCJhY2NvdW50Ijp7ImlkIjoiZTY5MWM3ZmMtMDEyMC00NjViLTkwNWEtMmIyMjFmNWRiNDAzIiwibmFtZSI6IlN0YXRlIG9mIEhhd2FpaSJ9LCJwZXJtaXNzaW9uIjp7ImlkIjoiNTcyYTM2NjQtYjY2MC00NjFlLTg4MDMtODJkZmYzOTI1NjI0Iiwid29ya3NwYWNlSWQiOiJmNzU4ZmJiNC1hNWVjLTQzZjctYmJhZC1hYzMyNTRmMDE5NzYiLCJ3b3Jrc3BhY2VOYW1lIjoiU3RhdGVvZkhhd2FpaVNhbmRib3giLCJyb2xlIjoiQURNSU4iLCJjdXN0b21lclJvbGVzIjpudWxsLCJhY2Nlc3NDb250cm9sRW50aXRpZXMiOm51bGwsInN0YXR1cyI6IkFDVElWRSJ9fSwianRpIjoiZjY2ODQ2YTctN2ViZS00NDk2LTg3ZDMtZTI3NjIxYTcyNGM4IiwiZXhwIjoxNTcxNDIyMjg5LCJpbnN0YW5jZVVybCI6Imh0dHBzOi8vaGF3YWlpLmxlYW5peC5uZXQifQ.I_1NvgPPl_X88eRKRm8nfqqEdV-IkroLgS047NNh5GvKiXpUAOUoOychroRJ2C___C_ELeVWtzPYCEGV0243lmSkFn_zY6Z8lEfJWSpRv5aAAlUfW4-1dHEaRkNkJBibDzzN_rTijXI5Nifv4bD2XoecR8uzL0OUXud3ekkHuzzW-Z4pTId28O2V5LGtabVD2fI_sadb4ludZpkdsWZhTnoHb-5jDAcFbTPM7beaxQzrVsafDrlSTeRRYrmQCGvnNdTm4HsBeFKd3OSESL1k1X31Ccca_tfN6ATf6kss89ysYPQHVO9mWWG9S8DUTa57UsLeyuYdw140GwYdb02n0g"
 						}
 					},
 					"sink": {
@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_JSON_to_BLOB",
+						"referenceName": "Output_LeanIX_Project_JSON_to_BLOB",
 						"type": "DatasetReference"
 					}
 				]
