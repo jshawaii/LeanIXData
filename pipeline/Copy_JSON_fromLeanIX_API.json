@@ -39,7 +39,11 @@
 				"inputs": [
 					{
 						"referenceName": "Input_LEANIX_API",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Headers": "$headers",
+							"OutFile": "application.json"
+						}
 					}
 				],
 				"outputs": [
