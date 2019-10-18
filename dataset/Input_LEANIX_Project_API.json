@@ -1,0 +1,21 @@
+{
+	"name": "Input_LEANIX_Project_API",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"-Headers": {
+				"type": "string",
+				"defaultValue": "$headers"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "?type=Project&pageSize=40&permissions=false"
+		},
+		"schema": []
+	}
+}

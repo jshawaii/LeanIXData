@@ -1,18 +1,15 @@
 {
-	"name": "Input_LEANIX_API",
+	"name": "Input_Lean_IX_Application",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"-Headers": {
-				"type": "string",
-				"defaultValue": "$headers"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "?type=Application&pageSize=40&permissions=false"
+		},
 		"schema": []
 	}
 }

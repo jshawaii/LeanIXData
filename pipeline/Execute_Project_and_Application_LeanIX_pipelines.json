@@ -1,0 +1,34 @@
+{
+	"name": "Execute_Project_and_Application_LeanIX_pipelines",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute_GET_LeanIX_Application_json",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_Application_JSON_fromLeanIX_API",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Execute_GET_LeanIX_Project_json",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_Project_JSON_from_LeanIX_API",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
