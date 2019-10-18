@@ -6,11 +6,11 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"Headers": {
+			"-Headers": {
 				"type": "string",
 				"defaultValue": "$headers"
 			},
-			"OutFile": {
+			"-OutFile": {
 				"type": "string",
 				"defaultValue": "applications.json"
 			}
