@@ -35,3 +35,5 @@ The capabilities built into this lab are:
 
 <a href="https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/">Dark mode for SSMS 16/17/18</a>
 
+[Convert to base64 for the LeanIX apitoken](https://www.base64encode.org/)
+
