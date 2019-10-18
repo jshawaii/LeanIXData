@@ -38,11 +38,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LEANIX_API",
-						"type": "DatasetReference",
-						"parameters": {
-							"-Headers": "$headers"
-						}
+						"referenceName": "Input_Lean_IX_Application",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
