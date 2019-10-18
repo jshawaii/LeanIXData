@@ -2,14 +2,14 @@
 	"name": "Input_TXT",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "VM3CDrive",
+			"referenceName": "MS_MAC_ADLSv2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "FileServerLocation",
+				"type": "AzureBlobFSLocation",
 				"folderPath": "temp"
 			},
 			"columnDelimiter": ",",

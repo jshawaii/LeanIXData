@@ -5,6 +5,12 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"-Headers": {
+				"type": "string",
+				"defaultValue": "$headers"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"schema": []
