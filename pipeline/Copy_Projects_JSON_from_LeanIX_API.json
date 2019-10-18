@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_Hawaii_LeanIX_Projects",
+				"name": "Copy_Hawaii_LeanIX_Project",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -38,7 +38,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LEANIX_API",
+						"referenceName": "Input_LEANIX_Project_API",
 						"type": "DatasetReference",
 						"parameters": {
 							"-Headers": "$headers"
@@ -47,7 +47,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_JSON_to_BLOB",
+						"referenceName": "Output_LeanIX_Project_JSON_to_BLOB",
 						"type": "DatasetReference"
 					}
 				]
