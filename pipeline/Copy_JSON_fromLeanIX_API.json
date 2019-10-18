@@ -41,8 +41,8 @@
 						"referenceName": "Input_LEANIX_API",
 						"type": "DatasetReference",
 						"parameters": {
-							"Headers": "$headers",
-							"OutFile": "application.json"
+							"-Headers": "$headers",
+							"-OutFile": "application.json"
 						}
 					}
 				],
