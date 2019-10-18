@@ -5,6 +5,24 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"type": {
+				"type": "string",
+				"defaultValue": "Application"
+			},
+			"pageSize": {
+				"type": "string",
+				"defaultValue": "40"
+			},
+			"permissions": {
+				"type": "string",
+				"defaultValue": "false"
+			},
+			"output": {
+				"type": "string",
+				"defaultValue": "application.json"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"schema": []
