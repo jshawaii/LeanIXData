@@ -1,0 +1,14 @@
+{
+	"name": "LeanIX_Application",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Calls LeanIX API to get the Applications Factsheet",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://hawaii.leanix.net/services/pathfinder/v1/factSheets",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
