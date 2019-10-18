@@ -1,5 +1,5 @@
 {
-	"name": "Input_LEANIX_API",
+	"name": "Input_LEANIX_Project_API",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
