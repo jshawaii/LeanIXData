@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_Project_JSON_to_BLOB",
+						"referenceName": "Output_LeanIX_Application_JSON_to_Blob",
 						"type": "DatasetReference"
 					}
 				]
