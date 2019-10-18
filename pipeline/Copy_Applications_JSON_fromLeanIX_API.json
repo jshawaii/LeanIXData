@@ -1,5 +1,5 @@
 {
-	"name": "Copy_JSON_fromLeanIX_API",
+	"name": "Copy_Applications_JSON_fromLeanIX_API",
 	"properties": {
 		"activities": [
 			{
@@ -41,8 +41,7 @@
 						"referenceName": "Input_LEANIX_API",
 						"type": "DatasetReference",
 						"parameters": {
-							"-Headers": "$headers",
-							"-OutFile": "application.json"
+							"-Headers": "$headers"
 						}
 					}
 				],
