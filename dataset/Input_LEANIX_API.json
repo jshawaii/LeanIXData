@@ -9,10 +9,6 @@
 			"-Headers": {
 				"type": "string",
 				"defaultValue": "$headers"
-			},
-			"-OutFile": {
-				"type": "string",
-				"defaultValue": "applications.json"
 			}
 		},
 		"annotations": [],
