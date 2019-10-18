@@ -6,21 +6,13 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"type": {
+			"Headers": {
 				"type": "string",
-				"defaultValue": "Application"
+				"defaultValue": "$headers"
 			},
-			"pageSize": {
+			"OutFile": {
 				"type": "string",
-				"defaultValue": "40"
-			},
-			"permissions": {
-				"type": "string",
-				"defaultValue": "false"
-			},
-			"output": {
-				"type": "string",
-				"defaultValue": "application.json"
+				"defaultValue": "applications.json"
 			}
 		},
 		"annotations": [],
