@@ -36,5 +36,6 @@ The capabilities built into this lab are:
 <a href="https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/">Dark mode for SSMS 16/17/18</a>
 
 [Convert to base64 for the LeanIX apitoken](https://www.base64encode.org/)
+
 [Discussion on how to format the body of a Web pipeline](https://social.msdn.microsoft.com/Forums/azure/en-US/c826f2a8-fa23-4513-bf72-51c97f36b407/the-format-of-body-for-a-post-request-in-web-activity-in-azure-data-factory)
 
