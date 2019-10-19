@@ -1,0 +1,41 @@
+{
+	"name": "Output_LeanIX_Project_Fields_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "dataType",
+				"type": "varchar"
+			},
+			{
+				"name": "type",
+				"type": "varchar"
+			},
+			{
+				"name": "phasesStartDate",
+				"type": "varchar"
+			},
+			{
+				"name": "phasesPhase",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LeanIX_Project_Fields"
+		}
+	}
+}
