@@ -40,3 +40,5 @@ The capabilities built into this lab are:
 [Discussion on how to format the body of a Web pipeline](https://social.msdn.microsoft.com/Forums/azure/en-US/c826f2a8-fa23-4513-bf72-51c97f36b407/the-format-of-body-for-a-post-request-in-web-activity-in-azure-data-factory)
 
 [Get JSON reponse in a Web Activity](https://feedback.azure.com/forums/270578-data-factory/suggestions/34190236-get-the-json-response-in-a-web-activity)
+
+[Discussion on how to use ouput from Web Activity in ADF](https://stackoverflow.com/questions/49693338/use-output-from-web-activity-call-as-variable)
