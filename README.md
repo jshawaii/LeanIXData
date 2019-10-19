@@ -21,19 +21,21 @@ The capabilities built into this lab are:
   
 ## References
 
-<a href="https://stackoverflow.com/questions/53859600/handling-bearer-tokens-in-azure-pipeline-for-http-objects">Handling Bearer Tokens in Azure Pipeline</a>
+[Handling Bearer Tokens in Azure Pipeline](https://stackoverflow.com/questions/53859600/handling-bearer-tokens-in-azure-pipeline-for-http-objects)
 
-<a href="https://bertwagner.com/2018/05/22/converting-json-to-sql-server-create-table-statements/">Creating SQL Table schemas from JSON</a>
+[Creating SQL Table schemas from JSON](https://bertwagner.com/2018/05/22/converting-json-to-sql-server-create-table-statements/)
 
-<a href="https://stackoverflow.com/questions/46959338/error-executing-openrowset-bulk-azure-sql-database">Discussion regarding Operating System error(null)</a>
+[Discussion regarding Operating System error(null)](https://stackoverflow.com/questions/46959338/error-executing-openrowset-bulk-azure-sql-database)
 
-<a href="https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory">Service-to-service authentication with Azure Data Lake Storage using AAD</a>
+[Service-to-Service authentication with Azure Data Lake Storage using AAD](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory)
 
-<a href="https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/02/23/loading-files-from-azure-blob-storage-into-azure-sql-database/">Loading files from Azure Blob Storage into Azure SQL Database</a>
+[Loading files from Azure Blob Storage into Azure SQL Database](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/02/23/loading-files-from-azure-blob-storage-into-azure-sql-database/)
 
-<a href="https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store">Load data from Azure Data Lake into SQL DW</a>
+[Load data from Azure Data Lake into SQL](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store)
 
-<a href="https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/">Dark mode for SSMS 16/17/18</a>
+[Dark mode for SSMS]("https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/)
+
+[LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
 
 [Convert to base64 for the LeanIX apitoken](https://www.base64encode.org/)
 
@@ -42,3 +44,4 @@ The capabilities built into this lab are:
 [Get JSON reponse in a Web Activity](https://feedback.azure.com/forums/270578-data-factory/suggestions/34190236-get-the-json-response-in-a-web-activity)
 
 [Discussion on how to use ouput from Web Activity in ADF](https://stackoverflow.com/questions/49693338/use-output-from-web-activity-call-as-variable)
+
