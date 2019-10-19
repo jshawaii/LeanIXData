@@ -33,7 +33,7 @@ The capabilities built into this lab are:
 
 [Load data from Azure Data Lake into SQL](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store)
 
-[Dark mode for SSMS]("https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/)
+[Dark mode for SSMS](https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/)
 
 [LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
 
