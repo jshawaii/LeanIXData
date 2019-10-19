@@ -14,26 +14,6 @@
 					},
 					"waitOnCompletion": true
 				}
-			},
-			{
-				"name": "Copy_Application_JSON",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "Get_LeanIX_Bearer_Token",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "Copy_Application_JSON_fromLeanIX_API",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"annotations": []
