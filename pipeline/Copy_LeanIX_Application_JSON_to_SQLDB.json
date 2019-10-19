@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "Copy_LeanIX_Application_JSON_to_SQLDB",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy_LeanIX_Application_JSON",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -22,11 +22,134 @@
 							"recursive": true
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								},
+								"sink": {
+									"name": "description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['displayName']"
+								},
+								"sink": {
+									"name": "displayName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['fullName']"
+								},
+								"sink": {
+									"name": "fullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['createdAt']"
+								},
+								"sink": {
+									"name": "createdAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['updatedAt']"
+								},
+								"sink": {
+									"name": "updatedAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['status']"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['level']"
+								},
+								"sink": {
+									"name": "level",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['score']"
+								},
+								"sink": {
+									"name": "score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['rev']"
+								},
+								"sink": {
+									"name": "rev",
+									"type": "Int32"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "Output_LeanIX_Application_JSON_to_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Application_SQLDB",
 						"type": "DatasetReference"
 					}
 				]
