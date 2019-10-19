@@ -1,17 +1,17 @@
 {
-	"name": "Output_HI_LeanIX_JSON",
+	"name": "Output_Test_HI_LeanIX_JSON",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "MS_MAC_ADLSv2",
+			"referenceName": "ADFLabBlob",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"folderPath": "json",
-				"fileSystem": "raw"
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Application2.json",
+				"container": "raw"
 			}
 		},
 		"schema": {
