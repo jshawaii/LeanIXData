@@ -17,6 +17,10 @@
 				"type": "varchar"
 			},
 			{
+				"name": "description",
+				"type": "varchar"
+			},
+			{
 				"name": "displayName",
 				"type": "varchar"
 			},
