@@ -1,10 +1,10 @@
 {
 	"name": "Copy_LeanIX_Project_JSON_to_SQLDB",
 	"properties": {
-		"description": "Ingest LeanIX Project.$.Data to SQLDB dbo.Project Table",
+		"description": "Ingest LeanIX Project.$.Data to SQLDB dbo.LeanIXProject Table",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy_LeanIXProject_JSON",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -32,7 +32,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['data'][0]['id']"
+									"path": "['id']"
 								},
 								"sink": {
 									"name": "id",
@@ -41,7 +41,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['name']"
+									"path": "['name']"
 								},
 								"sink": {
 									"name": "name",
@@ -50,7 +50,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['description']"
+									"path": "['description']"
 								},
 								"sink": {
 									"name": "description",
@@ -59,7 +59,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['displayName']"
+									"path": "['displayName']"
 								},
 								"sink": {
 									"name": "displayName",
@@ -68,7 +68,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['fullName']"
+									"path": "['fullName']"
 								},
 								"sink": {
 									"name": "fullname",
@@ -77,7 +77,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['type']"
+									"path": "['type']"
 								},
 								"sink": {
 									"name": "type",
@@ -86,7 +86,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['createdAt']"
+									"path": "['createdAt']"
 								},
 								"sink": {
 									"name": "createdAt",
@@ -95,7 +95,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['updatedAt']"
+									"path": "['updatedAt']"
 								},
 								"sink": {
 									"name": "updatedAt",
@@ -104,7 +104,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['status']"
+									"path": "['status']"
 								},
 								"sink": {
 									"name": "status",
@@ -113,7 +113,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['level']"
+									"path": "['level']"
 								},
 								"sink": {
 									"name": "level",
@@ -122,7 +122,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['score']"
+									"path": "['score']"
 								},
 								"sink": {
 									"name": "score",
@@ -131,7 +131,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['rev']"
+									"path": "['rev']"
 								},
 								"sink": {
 									"name": "rev",
@@ -139,7 +139,7 @@
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "$['data']"
 					}
 				},
 				"inputs": [
