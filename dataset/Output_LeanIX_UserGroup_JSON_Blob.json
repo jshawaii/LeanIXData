@@ -1,0 +1,268 @@
+{
+	"name": "Output_LeanIX_UserGroup_JSON_Blob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADFLabBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "UserGroups.json",
+				"container": "raw"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string"
+				},
+				"errors": {
+					"type": "array"
+				},
+				"total": {
+					"type": "integer"
+				},
+				"data": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string"
+							},
+							"name": {
+								"type": "string"
+							},
+							"displayName": {
+								"type": "string"
+							},
+							"fullName": {
+								"type": "string"
+							},
+							"type": {
+								"type": "string"
+							},
+							"tags": {
+								"type": "array"
+							},
+							"fields": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"data": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"type": {
+													"type": "string"
+												}
+											}
+										},
+										"dataType": {
+											"type": "null"
+										}
+									}
+								}
+							},
+							"relations": {
+								"type": "array"
+							},
+							"completion": {
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string"
+									},
+									"completion": {
+										"type": "number"
+									},
+									"percentage": {
+										"type": "integer"
+									},
+									"subCompletions": {
+										"type": "object",
+										"properties": {
+											"section.dependencies": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.children.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.parents.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											"section.information": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.nameDescription.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											"section.demandManagement": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.factSheetsUsed.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.factSheetsUsed.label__": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							},
+							"createdAt": {
+								"type": "string"
+							},
+							"updatedAt": {
+								"type": "string"
+							},
+							"documents": {
+								"type": "array"
+							},
+							"status": {
+								"type": "string"
+							},
+							"level": {
+								"type": "integer"
+							},
+							"score": {
+								"type": "string"
+							},
+							"rev": {
+								"type": "integer"
+							},
+							"naFields": {
+								"type": "array"
+							},
+							"subscriptions": {
+								"type": "array"
+							},
+							"permittedReadACL": {
+								"type": "array"
+							},
+							"permittedWriteACL": {
+								"type": "array"
+							}
+						}
+					}
+				},
+				"cursor": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
