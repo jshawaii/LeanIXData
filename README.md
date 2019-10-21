@@ -45,3 +45,7 @@ The capabilities built into this lab are:
 
 [Discussion on how to use ouput from Web Activity in ADF](https://stackoverflow.com/questions/49693338/use-output-from-web-activity-call-as-variable)
 
+[Discussion on how to run PowerShell in Data Factory](https://stackoverflow.com/questions/52721399/how-to-run-powershell-from-azure-data-factory)
+
+[Custom Activity in Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-using-dotnet-custom-activity)
+
