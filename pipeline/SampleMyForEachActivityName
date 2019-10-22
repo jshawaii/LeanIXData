@@ -3,7 +3,7 @@
     "properties": {
         "activities": [
             {
-                "name": "<MyForEachActivityName>",
+                "name": "<SampleMyForEachActivityName>",
                 "type": "ForEach",
                 "typeProperties": {
                     "isSequential": "true",
