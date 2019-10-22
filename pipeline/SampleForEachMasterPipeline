@@ -1,0 +1,54 @@
+{
+  "name": "masterPipeline",
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "name": "MyForEachActivity",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@pipeline().parameters.inputtables",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "ExecutePipeline",
+              "typeProperties": {
+                "pipeline": {
+                  "referenceName": "InnerCopyPipeline",
+                  "type": "PipelineReference"
+                },
+                "parameters": {
+                  "sourceTableName": {
+                    "value": "@item().SourceTable",
+                    "type": "Expression"
+                  },
+                  "sourceTableStructure": {
+                    "value": "@item().SourceTableStructure",
+                    "type": "Expression"
+                  },
+                  "sinkTableName": {
+                    "value": "@item().DestTable",
+                    "type": "Expression"
+                  },
+                  "sinkTableStructure": {
+                    "value": "@item().DestTableStructure",
+                    "type": "Expression"
+                  }
+                },
+                "waitOnCompletion": true
+              },
+              "name": "ExecuteCopyPipeline"
+            }
+          ]
+        }
+      }
+    ],
+    "parameters": {
+      "inputtables": {
+        "type": "Array"
+      }
+    }
+  }
+}
