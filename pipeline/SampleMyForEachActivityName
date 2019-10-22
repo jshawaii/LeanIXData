@@ -9,14 +9,14 @@
         },
       "activities":[  
          {  
-            "name":"MyCopyActivity",
+            "name":"TestCopyApplicationJSON",
             "type":"Copy",
             "typeProperties":{  
                
             },
             "inputs":[  
                {  
-                  "referenceName":"MyDataset",
+                  "referenceName":"Input_Fileshare_TXT",
                   "type":"DatasetReference",
                   "parameters":{  
                      "MyFolderPath":"@pipeline().parameters.mySourceDatasetFolderPath"
@@ -25,7 +25,7 @@
             ],
             "outputs":[  
                {  
-                  "referenceName":"MyDataset",
+                  "referenceName":"Input_Fileshare_TXT",
                   "type":"DatasetReference",
                   "parameters":{  
                      "MyFolderPath":"@item()"
