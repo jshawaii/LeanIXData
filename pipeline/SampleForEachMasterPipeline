@@ -1,5 +1,5 @@
 {
-  "name": "masterPipeline",
+  "name": "SampleForEachMasterPipeline",
   "properties": {
     "activities": [
       {
