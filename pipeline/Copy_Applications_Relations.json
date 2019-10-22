@@ -1,6 +1,7 @@
 {
-	"name": "pipeline1",
+	"name": "Copy_Applications_Relations",
 	"properties": {
+		"description": "Iterative copy of each Application ID and calling the Application:Relations API and passing the ApplicationID as a parameter to retrieve relations data specific to the ApplicationID",
 		"activities": [
 			{
 				"name": "ForEach1",
@@ -45,6 +46,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "LeanIX Pipelines/Unit Testing Pipelines"
+		},
 		"annotations": []
 	}
 }

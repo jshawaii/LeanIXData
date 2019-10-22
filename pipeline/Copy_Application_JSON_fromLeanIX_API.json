@@ -50,6 +50,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "LeanIX Pipelines/Unit Testing Pipelines"
+		},
 		"annotations": []
 	}
 }

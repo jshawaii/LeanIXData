@@ -13,15 +13,12 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "Load_LeanIX_Projects__SQLDB_table",
-						"type": "DataFlowReference"
-					}
-				}
+				"userProperties": []
 			}
 		],
+		"folder": {
+			"name": "LeanIX Pipelines/Unit Testing Pipelines"
+		},
 		"annotations": []
 	}
 }
