@@ -1,38 +1,60 @@
-{  
-   "name":"SampleMyForEachActivityName",
-   "type":"ForEach",
-   "typeProperties":{  
-      "isSequential":"true",
-        "items": {
-            "value": "@pipeline().parameters.mySinkDatasetFolderPathCollection",
-            "type": "Expression"
-        },
-      "activities":[  
-         {  
-            "name":"TestCopyApplicationJSON",
-            "type":"Copy",
-            "typeProperties":{  
-               
+{
+    "name": "<SampleMyForEachActivity>",
+    "properties": {
+        "activities": [
+            {
+                "name": "<MyForEachActivity>",
+                "type": "ForEach",
+                "typeProperties": {
+                    "isSequential": "true",
+                    "items": {
+                        "value": "@pipeline().parameters.mySinkDatasetFolderPath",
+                        "type": "Expression"
+                    },
+                    "activities": [
+                        {
+                            "name": "MyCopyActivity",
+                            "type": "Copy",
+                            "typeProperties": {
+                                "source": {
+                                    "type": "BlobSource",
+                                    "recursive": "false"
+                                },
+                                "sink": {
+                                    "type": "BlobSink",
+                                    "copyBehavior": "PreserveHierarchy"
+                                }
+                            },
+                            "inputs": [
+                                {
+                                    "referenceName": "<MyDataset>",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "MyFolderPath": "@pipeline().parameters.mySourceDatasetFolderPath"
+                                    }
+                                }
+                            ],
+                            "outputs": [
+                                {
+                                    "referenceName": "MyDataset",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "MyFolderPath": "@item()"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "parameters": {
+            "mySourceDatasetFolderPath": {
+                "type": "String"
             },
-            "inputs":[  
-               {  
-                  "referenceName":"Input_Fileshare_TXT",
-                  "type":"DatasetReference",
-                  "parameters":{  
-                     "MyFolderPath":"@pipeline().parameters.mySourceDatasetFolderPath"
-                  }
-               }
-            ],
-            "outputs":[  
-               {  
-                  "referenceName":"Input_Fileshare_TXT",
-                  "type":"DatasetReference",
-                  "parameters":{  
-                     "MyFolderPath":"@item()"
-                  }
-               }
-            ]
-         }
-      ]
-   }
+            "mySinkDatasetFolderPath": {
+                "type": "String"
+            }
+        }
+    }
 }
