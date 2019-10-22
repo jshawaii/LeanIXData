@@ -1,0 +1,16 @@
+{
+	"name": "Output_LeanIX_Application_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LeanIX_Application"
+		}
+	}
+}

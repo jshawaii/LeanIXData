@@ -75,7 +75,10 @@
 					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
 					"method": "POST",
 					"headers": {
-						"Authorization": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+						"Authorization": {
+							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+							"type": "Expression"
+						},
 						"Content-Type": "application/x-www-form-urlencoded"
 					},
 					"body": "grant_type=client_credentials"
@@ -107,7 +110,10 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
 						"additionalHeaders": {
-							"Authorization": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))"
+							"Authorization": {
+								"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+								"type": "Expression"
+							}
 						}
 					},
 					"sink": {
@@ -164,7 +170,10 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
 						"additionalHeaders": {
-							"Authorization": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))"
+							"Authorization": {
+								"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+								"type": "Expression"
+							}
 						}
 					},
 					"sink": {
@@ -193,6 +202,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "LeanIX Pipelines/Production Pipelines"
+		},
 		"annotations": []
 	}
 }

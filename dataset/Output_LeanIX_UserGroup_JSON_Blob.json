@@ -1,5 +1,5 @@
 {
-	"name": "Output_LeanIX_Application_JSON_to_Blob",
+	"name": "Output_LeanIX_UserGroup_JSON_Blob",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADFLabBlob",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Application.json",
+				"fileName": "UserGroups.json",
 				"container": "raw"
 			}
 		},
@@ -37,9 +37,6 @@
 							"name": {
 								"type": "string"
 							},
-							"description": {
-								"type": "string"
-							},
 							"displayName": {
 								"type": "string"
 							},
@@ -50,53 +47,7 @@
 								"type": "string"
 							},
 							"tags": {
-								"type": "array",
-								"items": {
-									"type": "object",
-									"properties": {
-										"id": {
-											"type": "string"
-										},
-										"tagGroup": {
-											"type": "object",
-											"properties": {
-												"id": {
-													"type": "string"
-												},
-												"name": {
-													"type": "string"
-												},
-												"shortName": {
-													"type": "null"
-												},
-												"description": {
-													"type": "string"
-												},
-												"mode": {
-													"type": "string"
-												},
-												"restrictToFactSheetTypes": {
-													"type": "array",
-													"items": {
-														"type": "string"
-													}
-												}
-											}
-										},
-										"name": {
-											"type": "string"
-										},
-										"description": {
-											"type": "null"
-										},
-										"bgColor": {
-											"type": "string"
-										},
-										"status": {
-											"type": "string"
-										}
-									}
-								}
+								"type": "array"
 							},
 							"fields": {
 								"type": "array",
@@ -109,22 +60,11 @@
 										"data": {
 											"type": "object",
 											"properties": {
-												"type": {
+												"value": {
 													"type": "string"
 												},
-												"phases": {
-													"type": "array",
-													"items": {
-														"type": "object",
-														"properties": {
-															"startDate": {
-																"type": "string"
-															},
-															"phase": {
-																"type": "string"
-															}
-														}
-													}
+												"type": {
+													"type": "string"
 												}
 											}
 										},
@@ -152,7 +92,7 @@
 									"subCompletions": {
 										"type": "object",
 										"properties": {
-											"section.sourcing": {
+											"section.dependencies": {
 												"type": "object",
 												"properties": {
 													"type": {
@@ -167,7 +107,21 @@
 													"subCompletions": {
 														"type": "object",
 														"properties": {
-															"subsection.technicalSuitability.label": {
+															"subsection.children.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.parents.label": {
 																"type": "object",
 																"properties": {
 																	"type": {
@@ -213,26 +167,12 @@
 																		"type": "integer"
 																	}
 																}
-															},
-															"subsection.lifecycle.label": {
-																"type": "object",
-																"properties": {
-																	"type": {
-																		"type": "string"
-																	},
-																	"completion": {
-																		"type": "number"
-																	},
-																	"percentage": {
-																		"type": "integer"
-																	}
-																}
 															}
 														}
 													}
 												}
 											},
-											"section.dependencies": {
+											"section.demandManagement": {
 												"type": "object",
 												"properties": {
 													"type": {
@@ -247,7 +187,7 @@
 													"subCompletions": {
 														"type": "object",
 														"properties": {
-															"subsection.requiredBy.label": {
+															"subsection.factSheetsUsed.label": {
 																"type": "object",
 																"properties": {
 																	"type": {
@@ -261,101 +201,7 @@
 																	}
 																}
 															},
-															"subsection.requires.label": {
-																"type": "object",
-																"properties": {
-																	"type": {
-																		"type": "string"
-																	},
-																	"completion": {
-																		"type": "number"
-																	},
-																	"percentage": {
-																		"type": "integer"
-																	}
-																}
-															}
-														}
-													}
-												}
-											},
-											"section.projects": {
-												"type": "object",
-												"properties": {
-													"type": {
-														"type": "string"
-													},
-													"completion": {
-														"type": "number"
-													},
-													"percentage": {
-														"type": "integer"
-													},
-													"subCompletions": {
-														"type": "object",
-														"properties": {
-															"subsection.factSheetsAffecting.label": {
-																"type": "object",
-																"properties": {
-																	"type": {
-																		"type": "string"
-																	},
-																	"completion": {
-																		"type": "number"
-																	},
-																	"percentage": {
-																		"type": "integer"
-																	}
-																}
-															}
-														}
-													}
-												}
-											},
-											"section.businessSupport": {
-												"type": "object",
-												"properties": {
-													"type": {
-														"type": "string"
-													},
-													"completion": {
-														"type": "number"
-													},
-													"percentage": {
-														"type": "integer"
-													},
-													"subCompletions": {
-														"type": "object",
-														"properties": {
-															"subsection.userGroups.label": {
-																"type": "object",
-																"properties": {
-																	"type": {
-																		"type": "string"
-																	},
-																	"completion": {
-																		"type": "number"
-																	},
-																	"percentage": {
-																		"type": "integer"
-																	}
-																}
-															},
-															"subsection.businessCriticalityFunctionalSuitability.label": {
-																"type": "object",
-																"properties": {
-																	"type": {
-																		"type": "string"
-																	},
-																	"completion": {
-																		"type": "number"
-																	},
-																	"percentage": {
-																		"type": "integer"
-																	}
-																}
-															},
-															"subsection.factSheetsSupported.label": {
+															"subsection.factSheetsUsed.label__": {
 																"type": "object",
 																"properties": {
 																	"type": {

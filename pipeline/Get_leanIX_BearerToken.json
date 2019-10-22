@@ -28,6 +28,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "LeanIX Pipelines/Unit Testing Pipelines/Authentication Pipelines"
+		},
 		"annotations": []
 	}
 }
