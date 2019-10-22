@@ -12,7 +12,7 @@
             "name":"MyCopyActivity",
             "type":"Copy",
             "typeProperties":{  
-               ...
+               
             },
             "inputs":[  
                {  
