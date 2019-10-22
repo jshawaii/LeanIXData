@@ -14,7 +14,10 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"isSequential": true
+				}
 			},
 			{
 				"name": "Copy data1",
