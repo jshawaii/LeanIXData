@@ -1,0 +1,38 @@
+{  
+   "name":"SampleMyForEachActivityName",
+   "type":"ForEach",
+   "typeProperties":{  
+      "isSequential":"true",
+        "items": {
+            "value": "@pipeline().parameters.mySinkDatasetFolderPathCollection",
+            "type": "Expression"
+        },
+      "activities":[  
+         {  
+            "name":"MyCopyActivity",
+            "type":"Copy",
+            "typeProperties":{  
+               ...
+            },
+            "inputs":[  
+               {  
+                  "referenceName":"MyDataset",
+                  "type":"DatasetReference",
+                  "parameters":{  
+                     "MyFolderPath":"@pipeline().parameters.mySourceDatasetFolderPath"
+                  }
+               }
+            ],
+            "outputs":[  
+               {  
+                  "referenceName":"MyDataset",
+                  "type":"DatasetReference",
+                  "parameters":{  
+                     "MyFolderPath":"@item()"
+                  }
+               }
+            ]
+         }
+      ]
+   }
+}
