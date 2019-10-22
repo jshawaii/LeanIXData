@@ -1,5 +1,5 @@
 {
-  "name": "InnerCopyPipeline",
+  "name": "SampleInnerForEachPipeline",
   "properties": {
     "activities": [
       {
