@@ -1,0 +1,66 @@
+{
+  "name": "InnerCopyPipeline",
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SqlSource",
+            }
+          },
+          "sink": {
+            "type": "SqlSink"
+          }
+        },
+        "name": "CopyActivity",
+        "inputs": [
+          {
+            "referenceName": "sqlSourceDataset",
+            "parameters": {
+              "SqlTableName": {
+                "value": "@pipeline().parameters.sourceTableName",
+                "type": "Expression"
+              },
+              "SqlTableStructure": {
+                "value": "@pipeline().parameters.sourceTableStructure",
+                "type": "Expression"
+              }
+            },
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "sqlSinkDataset",
+            "parameters": {
+              "SqlTableName": {
+                "value": "@pipeline().parameters.sinkTableName",
+                "type": "Expression"
+              },
+              "SqlTableStructure": {
+                "value": "@pipeline().parameters.sinkTableStructure",
+                "type": "Expression"
+              }
+            },
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "sourceTableName": {
+        "type": "String"
+      },
+      "sourceTableStructure": {
+        "type": "String"
+      },
+      "sinkTableName": {
+        "type": "String"
+      },
+      "sinkTableStructure": {
+        "type": "String"
+      }
+    }
+  }
+}
