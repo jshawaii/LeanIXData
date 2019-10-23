@@ -1,19 +1,25 @@
 {
-	"name": "Output_LeanIX_Application_SQLDB",
+	"name": "AzureSqlTable1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Azure_SQLDB",
 			"type": "LinkedServiceReference"
 		},
-		"folder": {
-			"name": "LeanIX DataSets/SQLDB"
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "fields",
+				"type": "varchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "LeanIX_Application"
+			"table": "Staging_LeanIX_Project_Fields"
 		}
 	}
 }
