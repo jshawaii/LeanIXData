@@ -58,3 +58,5 @@ The capabilities built into this lab are:
 [Discussion - Setting UTC Date variable in Postman to pass as a Header](https://gist.github.com/lsloan/8b986e4ac194dc01de35c017f355e455)
 
 [Hash signature in Postman](https://stackoverflow.com/questions/52974244/concatenate-hex-256sha-hash-a-signature)
+
+[Creating HMAC in Postman](https://gauravds.blogspot.com/2016/06/creating-hmac-in-postman-using-cryptojs.html)
