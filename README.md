@@ -52,3 +52,5 @@ The capabilities built into this lab are:
 [For Each activity in Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/control-flow-for-each-activity)
 
 [Azure Table Service REST API](https://docs.microsoft.com/en-us/rest/api/storageservices/table-service-rest-api)
+
+[Testing Azure REST APIs with Postman](https://www.youtube.com/watch?v=ujzrq8Fg9Gc)
