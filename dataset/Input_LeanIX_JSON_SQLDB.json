@@ -5,6 +5,9 @@
 			"referenceName": "Azure_SQLDB",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "LeanIX DataSets/SQLDB"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": []

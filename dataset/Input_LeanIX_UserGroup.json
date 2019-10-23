@@ -5,6 +5,9 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "LeanIX DataSets"
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
