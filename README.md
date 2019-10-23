@@ -62,3 +62,5 @@ The capabilities built into this lab are:
 [Creating HMAC in Postman](https://gauravds.blogspot.com/2016/06/creating-hmac-in-postman-using-cryptojs.html)
 
 [How to use Azure Storage APIs without SDK](https://tsmatz.wordpress.com/2016/07/06/how-to-get-azure-storage-rest-api-authorization-header/)
+
+[Online Base64 Encoder/Decoder for Dev/Debugging purposes](https://www.base64converter.com/)
