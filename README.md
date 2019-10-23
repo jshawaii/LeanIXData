@@ -50,3 +50,5 @@ The capabilities built into this lab are:
 [Custom Activity in Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-using-dotnet-custom-activity)
 
 [For Each activity in Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/control-flow-for-each-activity)
+
+[Azure Table Service REST API](https://docs.microsoft.com/en-us/rest/api/storageservices/table-service-rest-api)
