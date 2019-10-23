@@ -54,3 +54,5 @@ The capabilities built into this lab are:
 [Azure Table Service REST API](https://docs.microsoft.com/en-us/rest/api/storageservices/table-service-rest-api)
 
 [Testing Azure REST APIs with Postman](https://www.youtube.com/watch?v=ujzrq8Fg9Gc)
+
+[Discussion - Setting UTC Date variable in Postman to pass as a Header](https://gist.github.com/lsloan/8b986e4ac194dc01de35c017f355e455)
