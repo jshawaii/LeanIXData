@@ -16,7 +16,7 @@ The capabilities built into this lab are:
   c. Copy TXT files (large) from FileShare to ADLSv2 raw/TXT
   d. Runs the Data Flow mentioned in 3a below
   
-3) Data Flow (In Public Preview at time of build)\n
+3) Data Flow (In Public Preview at time of build)<br>
   a. Maps the CSV file for MockPersons to a SQLDB table
   
 ## References
