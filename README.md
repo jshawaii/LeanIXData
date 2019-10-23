@@ -16,7 +16,7 @@ The capabilities built into this lab are:
   c. Copy TXT files (large) from FileShare to ADLSv2 raw/TXT
   d. Runs the Data Flow mentioned in 3a below
   
-3) Data Flow (In Public Preview at time of build)
+3) Data Flow (In Public Preview at time of build)\n
   a. Maps the CSV file for MockPersons to a SQLDB table
   
 ## References
@@ -60,3 +60,5 @@ The capabilities built into this lab are:
 [Hash signature in Postman](https://stackoverflow.com/questions/52974244/concatenate-hex-256sha-hash-a-signature)
 
 [Creating HMAC in Postman](https://gauravds.blogspot.com/2016/06/creating-hmac-in-postman-using-cryptojs.html)
+
+[How to use Azure Storage APIs without SDK](https://tsmatz.wordpress.com/2016/07/06/how-to-get-azure-storage-rest-api-authorization-header/)
