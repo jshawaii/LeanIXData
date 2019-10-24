@@ -3,43 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "GetLeanIXBearerToken",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET"
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "Input_LeanIX_Application_Relations_JSON",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "GetLeanIXBearerToken",
-				"type": "WebActivity",
+				"name": "GetAllApplicationID",
+				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -50,16 +15,96 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
-					"method": "POST",
-					"headers": {
-						"Authorization": {
-							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
-							"type": "Expression"
-						},
-						"Content-Type": "application/x-www-form-urlencoded"
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT id FROM LeanIX_Application"
 					},
-					"body": "grant_type=client_credentials"
+					"dataset": {
+						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GetAllApplicationID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetAllApplicationID').output.value.id",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "GetLeanIXBearerToken",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
+								"method": "POST",
+								"headers": {
+									"Authorization": {
+										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"type": "Expression"
+									},
+									"Content-Type": "application/x-www-form-urlencoded"
+								},
+								"body": "grant_type=client_credentials"
+							}
+						},
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "GetLeanIXBearerToken",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "Input_LeanIX_Application_Relations_JSON",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
 				}
 			}
 		],
