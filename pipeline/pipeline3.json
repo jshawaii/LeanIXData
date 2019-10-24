@@ -52,9 +52,15 @@
 				}
 			},
 			{
-				"name": "Debugger",
-				"type": "SetVariable",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
+					{
+						"activity": "GetLeanIXBearerToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
 					{
 						"activity": "GetAllApplicationID",
 						"dependencyConditions": [
@@ -64,32 +70,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "id",
-					"value": {
-						"value": "@concat(activity('GetAllApplicationID').output.value,'/relations')",
+					"items": {
+						"value": "@activity('GetAllApplicationID').output.value",
 						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Debugger",
-						"dependencyConditions": [
-							"Succeeded"
-						]
 					},
-					{
-						"activity": "GetLeanIXBearerToken",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
 					"activities": [
 						{
 							"name": "CopyApplicationRelations",
@@ -138,9 +122,9 @@
 				}
 			}
 		],
-		"variables": {
+		"parameters": {
 			"id": {
-				"type": "String"
+				"type": "array"
 			}
 		},
 		"annotations": []

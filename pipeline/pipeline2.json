@@ -56,13 +56,13 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "GetAllApplicationID",
+						"activity": "GetLeanIXBearerToken",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "GetLeanIXBearerToken",
+						"activity": "Debugger",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -122,7 +122,7 @@
 				"typeProperties": {
 					"variableName": "id",
 					"value": {
-						"value": "@activity('GetAllApplicationID').output.value[0].id",
+						"value": "@concat(activity('GetAllApplicationID').output.value,'/relations')",
 						"type": "Expression"
 					}
 				}
