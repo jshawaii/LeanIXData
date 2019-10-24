@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "ApplicationID",
+				"name": "ID",
 				"type": "varchar"
 			},
 			{
