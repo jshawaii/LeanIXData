@@ -64,3 +64,5 @@ The capabilities built into this lab are:
 [How to use Azure Storage APIs without SDK](https://tsmatz.wordpress.com/2016/07/06/how-to-get-azure-storage-rest-api-authorization-header/)
 
 [Online Base64 Encoder/Decoder for Dev/Debugging purposes](https://www.base64converter.com/)
+
+[Video of ForEach activity](https://www.youtube.com/watch?v=P9uk-q-N8a4&t=277s)
