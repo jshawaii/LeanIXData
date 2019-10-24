@@ -112,10 +112,75 @@
 												"path": "$['id']"
 											},
 											"sink": {
-												"name": ""
+												"name": "ID",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['displayNameToFS']"
+											},
+											"sink": {
+												"name": "displayNameToFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['tyepFromFS']"
+											},
+											"sink": {
+												"name": "typeFromFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['typeToFS']"
+											},
+											"sink": {
+												"name": "typeToFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['status']"
+											},
+											"sink": {
+												"name": "status",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['fromId']"
+											},
+											"sink": {
+												"name": "fromId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['toId']"
+											},
+											"sink": {
+												"name": "toId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
 											}
 										}
-									]
+									],
+									"collectionReference": ""
 								}
 							},
 							"inputs": [
