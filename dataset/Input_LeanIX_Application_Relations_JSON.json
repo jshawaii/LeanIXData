@@ -8,7 +8,10 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": ""
+			"relativeUrl": {
+				"value": "@pipeline().parameters.id",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
