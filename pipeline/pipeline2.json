@@ -106,8 +106,33 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Debugger",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GetAllApplicationID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "id",
+					"value": {
+						"value": "@activity('GetAllApplicationID').output.value[0].id",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"variables": {
+			"id": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
