@@ -123,7 +123,7 @@
 				}
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set variable1_copy1",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -136,8 +136,56 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "id",
+					"value": [
+						"@activity('GetAllApplicationID').output.value[0].id"
+					]
+				}
+			},
+			{
+				"name": "ForEach2",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "SetCount",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "PopulateID",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "id",
+								"value": [
+									""
+								]
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "SetCount",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GetAllApplicationID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Count",
 					"value": {
-						"value": "@activity('GetAllApplicationID').output.value.id",
+						"value": "@activity('GetAllApplicationID').output.Count",
 						"type": "Expression"
 					}
 				}
@@ -145,6 +193,9 @@
 		],
 		"variables": {
 			"id": {
+				"type": "Array"
+			},
+			"Count": {
 				"type": "String"
 			}
 		},

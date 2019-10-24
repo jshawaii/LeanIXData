@@ -7,12 +7,6 @@
 		},
 		"annotations": [],
 		"type": "RestResource",
-		"typeProperties": {
-			"relativeUrl": {
-				"value": "@concat('/',pipeline().parameters.id)",
-				"type": "Expression"
-			}
-		},
 		"schema": []
 	}
 }
