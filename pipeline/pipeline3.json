@@ -109,11 +109,618 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "data.id"
+												"path": "$['data'][0]['id']"
 											},
 											"sink": {
 												"name": "ID",
 												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['name']"
+											},
+											"sink": {
+												"name": ""
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['description']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['displayName']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['fullName']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['tagGroup']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['tagGroup']['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['tagGroup']['shortName']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['tagGroup']['description']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['tagGroup']['mode']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['tagGroup']['restrictToFactSheetTypes']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['description']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['bgColor']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['tags'][0]['status']"
+											},
+											"sink": {
+												"name": "status",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['fields'][0]['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['fields'][0]['data']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['fields'][0]['data']['phases'][0]['startDate']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['fields'][0]['data']['phases'][0]['phase']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['fields'][0]['dataType']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['relations']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['completion']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['percentage']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['createdAt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['updatedAt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['documents']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['status']"
+											},
+											"sink": {
+												"name": "status",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['level']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['score']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['rev']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['naFields']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['subscriptions']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['permittedReadACL']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['permittedWriteACL']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['cursor']"
 											}
 										}
 									],
@@ -123,7 +730,13 @@
 							"inputs": [
 								{
 									"referenceName": "Input_LeanIX_Application_Relations_JSON",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ApplicationID": {
+											"value": "concat(@activity('GetAllApplicationID').output,'/relations')",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
@@ -137,6 +750,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"ApplicationID": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
