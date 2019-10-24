@@ -103,7 +103,20 @@
 								"sink": {
 									"type": "AzureSqlSink"
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "$['id']"
+											},
+											"sink": {
+												"name": ""
+											}
+										}
+									]
+								}
 							},
 							"inputs": [
 								{
@@ -122,11 +135,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"id": {
-				"type": "array"
-			}
-		},
 		"annotations": []
 	}
 }
