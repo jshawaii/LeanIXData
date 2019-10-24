@@ -13,7 +13,7 @@
 				"type": "varchar"
 			},
 			{
-				"name": "RelationID",
+				"name": "displayNameToFS",
 				"type": "varchar"
 			},
 			{
