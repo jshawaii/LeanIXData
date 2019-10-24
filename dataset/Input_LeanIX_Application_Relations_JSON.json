@@ -9,7 +9,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@pipeline().parameters.id",
+				"value": "@concat('/',pipeline().parameters.id)",
 				"type": "Expression"
 			}
 		},
