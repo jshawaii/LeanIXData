@@ -109,73 +109,10 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "$['data.id']"
+												"path": "data.id"
 											},
 											"sink": {
 												"name": "ID",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.displayNameToFS']"
-											},
-											"sink": {
-												"name": "displayNameToFS",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.tyepFromFS']"
-											},
-											"sink": {
-												"name": "typeFromFS",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.typeToFS']"
-											},
-											"sink": {
-												"name": "typeToFS",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.status']"
-											},
-											"sink": {
-												"name": "status",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.fromId']"
-											},
-											"sink": {
-												"name": "fromId",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.toId']"
-											},
-											"sink": {
-												"name": "toId",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['data.type']"
-											},
-											"sink": {
-												"name": "type",
 												"type": "String"
 											}
 										}
