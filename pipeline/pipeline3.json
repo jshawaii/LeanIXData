@@ -123,14 +123,31 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "CopyApplicationRelations",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "DebugURL",
+								"value": ""
+							}
 						}
 					]
 				}
 			}
 		],
-		"parameters": {
-			"ApplicationID": {
-				"type": "string"
+		"variables": {
+			"DebugURL": {
+				"type": "String"
 			}
 		},
 		"annotations": []
