@@ -5,16 +5,11 @@
 			"referenceName": "LeanIX_Relations",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"ApplicationID": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat(dataset().ApplicationID,'/relations')",
+				"value": "variables('RelativeURL')",
 				"type": "Expression"
 			}
 		},
