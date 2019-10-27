@@ -1,5 +1,5 @@
 {
-	"name": "pipeline4",
+	"name": "Copy_LeanIX_ApplicationRelations_To_SQLDB",
 	"properties": {
 		"activities": [
 			{
@@ -52,7 +52,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "GetApplicationRelations_JSON_into_Blob",
 				"type": "ForEach",
 				"dependsOn": [
 					{
