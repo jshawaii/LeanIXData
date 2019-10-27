@@ -110,8 +110,8 @@
 							}
 						},
 						{
-							"name": "CopyApplicationRelations",
-							"type": "Copy",
+							"name": "GetLeanIXFactsheet",
+							"type": "WebActivity",
 							"dependsOn": [
 								{
 									"activity": "Dynamically build the RelativeURL Step 2",
@@ -129,35 +129,24 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "RestSource",
-									"httpRequestTimeout": "00:01:40",
-									"requestInterval": "00.00:00:00.010",
-									"requestMethod": "GET",
-									"additionalHeaders": {
-										"Authorization": {
-											"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
-											"type": "Expression"
-										}
+								"url": {
+									"value": "@concat('https://hawaii.leanix.net/services/pathfinder/v1/factSheets/',variables('RelativeURL'))",
+									"type": "Expression"
+								},
+								"method": "GET",
+								"headers": {
+									"Authorization": {
+										"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+										"type": "Expression"
 									}
 								},
-								"sink": {
-									"type": "AzureSqlSink"
-								},
-								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "Input_LeanIX_Application_Relations_JSON",
-									"type": "DatasetReference"
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
-									"type": "DatasetReference"
-								}
-							]
+								"datasets": [
+									{
+										"referenceName": "Output_LeanIX_ApplicationRelations_Blob_Json",
+										"type": "DatasetReference"
+									}
+								]
+							}
 						}
 					]
 				}
