@@ -1,0 +1,267 @@
+{
+	"name": "pipeline6",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetAllApplicationID",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT id FROM LeanIX_Application"
+					},
+					"dataset": {
+						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "GetLeanIXBearerToken",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
+					"method": "POST",
+					"headers": {
+						"Authorization": {
+							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+							"type": "Expression"
+						},
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					"body": "grant_type=client_credentials"
+				}
+			},
+			{
+				"name": "GetApplicationRelations_JSON_into_Blob",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GetLeanIXBearerToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "GetAllApplicationID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetAllApplicationID').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Dynamically build the RelativeURL Step 1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "ApplicationID",
+								"value": {
+									"value": "@{item().id}",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Dynamically build the RelativeURL Step 3",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Dynamically build the RelativeURL Step 1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "FullyFormedRelativeURL",
+								"value": {
+									"value": "@concat(variables('ApplicationID'),'/relations')",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Copy_Application_Relations_JSON_to_Blob",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "Dynamically build the RelativeURL Step 3",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"additionalHeaders": {
+										"Authorization": {
+											"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+											"type": "Expression"
+										}
+									}
+								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings",
+										"quoteAllText": true
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "['id']"
+											},
+											"sink": {
+												"name": "ID",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['displayNameToFS']"
+											},
+											"sink": {
+												"name": "displayNameToFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['typeFromFS']"
+											},
+											"sink": {
+												"name": "typeFromFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['typeToFS']"
+											},
+											"sink": {
+												"name": "typeToFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['status']"
+											},
+											"sink": {
+												"name": "status",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['fromId']"
+											},
+											"sink": {
+												"name": "fromId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['toId']"
+											},
+											"sink": {
+												"name": "toId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										}
+									],
+									"collectionReference": "$['data']"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "Output_LeanIX_Application_Relations",
+									"type": "DatasetReference",
+									"parameters": {
+										"FullyFormedRelativeURL": {
+											"value": "@variables('FullyFormedRelativeURL')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_Application_Relations_Json_Blob",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"ApplicationID": {
+				"type": "String"
+			},
+			"FullyFormedRelativeURL": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
