@@ -13,6 +13,64 @@
 				"folderPath": "ApplicationRelations",
 				"container": "raw"
 			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string"
+				},
+				"errors": {
+					"type": "array"
+				},
+				"total": {
+					"type": "integer"
+				},
+				"data": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string"
+							},
+							"displayNameToFS": {
+								"type": "string"
+							},
+							"typeFromFS": {
+								"type": "string"
+							},
+							"typeToFS": {
+								"type": "string"
+							},
+							"permittedReadACL": {
+								"type": "array"
+							},
+							"constrainingRelations": {
+								"type": "array"
+							},
+							"fields": {
+								"type": "array"
+							},
+							"status": {
+								"type": "string"
+							},
+							"fromId": {
+								"type": "string"
+							},
+							"toId": {
+								"type": "string"
+							},
+							"naFields": {
+								"type": "array"
+							},
+							"type": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

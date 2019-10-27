@@ -251,6 +251,129 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Copy_Application_Relations_from_Blob_to_SQLDB",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "GetApplicationRelations_JSON_into_Blob",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['data'][0]['id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['displayNameToFS']"
+								},
+								"sink": {
+									"name": "displayNameToFS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['typeFromFS']"
+								},
+								"sink": {
+									"name": "typeFromFS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['typeToFS']"
+								},
+								"sink": {
+									"name": "typeToFS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['status']"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['fromId']"
+								},
+								"sink": {
+									"name": "fromId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['toId']"
+								},
+								"sink": {
+									"name": "toId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Output_Application_Relations_Json_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
