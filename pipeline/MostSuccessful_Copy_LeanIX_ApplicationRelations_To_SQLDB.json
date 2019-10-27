@@ -1,5 +1,5 @@
 {
-	"name": "Copy_LeanIX_ApplicationRelations_To_SQLDB",
+	"name": "MostSuccessful_Copy_LeanIX_ApplicationRelations_To_SQLDB",
 	"properties": {
 		"activities": [
 			{
@@ -139,13 +139,7 @@
 										"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
 										"type": "Expression"
 									}
-								},
-								"datasets": [
-									{
-										"referenceName": "Output_LeanIX_ApplicationRelations_Blob_Json",
-										"type": "DatasetReference"
-									}
-								]
+								}
 							}
 						}
 					]
