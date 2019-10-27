@@ -277,7 +277,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFileName": "*.*",
+							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -290,7 +290,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['data'][0]['id']"
+									"path": "['id']"
 								},
 								"sink": {
 									"name": "ID",
@@ -299,7 +299,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['displayNameToFS']"
+									"path": "['displayNameToFS']"
 								},
 								"sink": {
 									"name": "displayNameToFS",
@@ -308,7 +308,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['typeFromFS']"
+									"path": "['typeFromFS']"
 								},
 								"sink": {
 									"name": "typeFromFS",
@@ -317,7 +317,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['typeToFS']"
+									"path": "['typeToFS']"
 								},
 								"sink": {
 									"name": "typeToFS",
@@ -326,7 +326,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['status']"
+									"path": "['status']"
 								},
 								"sink": {
 									"name": "status",
@@ -335,7 +335,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['fromId']"
+									"path": "['fromId']"
 								},
 								"sink": {
 									"name": "fromId",
@@ -344,7 +344,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['toId']"
+									"path": "['toId']"
 								},
 								"sink": {
 									"name": "toId",
@@ -353,7 +353,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['type']"
+									"path": "['type']"
 								},
 								"sink": {
 									"name": "type",
@@ -361,7 +361,7 @@
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "$['data']"
 					}
 				},
 				"inputs": [
