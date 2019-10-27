@@ -110,7 +110,7 @@
 							}
 						},
 						{
-							"name": "Copy data1",
+							"name": "Copy_Application_Relations_JSON_to_Blob",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -142,7 +142,14 @@
 									}
 								},
 								"sink": {
-									"type": "AzureSqlSink"
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings",
+										"quoteAllText": true
+									}
 								},
 								"enableStaging": false,
 								"translator": {
@@ -237,7 +244,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
+									"referenceName": "Output_Application_Relations_Json_Blob",
 									"type": "DatasetReference"
 								}
 							]
