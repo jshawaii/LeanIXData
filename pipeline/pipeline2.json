@@ -1,0 +1,120 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetAllApplicationID",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT id FROM LeanIX_Application"
+					},
+					"dataset": {
+						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "GetLeanIXBearerToken",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
+					"method": "POST",
+					"headers": {
+						"Authorization": {
+							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+							"type": "Expression"
+						},
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					"body": "grant_type=client_credentials"
+				}
+			},
+			{
+				"name": "CopyApplicationRelations",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "GetLeanIXBearerToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Debugger",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false
+				},
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Debugger",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GetAllApplicationID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "id",
+					"value": {
+						"value": "@concat(activity('GetAllApplicationID').output.value,'/relations')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"id": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

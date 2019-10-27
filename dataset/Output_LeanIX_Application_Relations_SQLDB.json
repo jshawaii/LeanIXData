@@ -1,0 +1,49 @@
+{
+	"name": "Output_LeanIX_Application_Relations_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "varchar"
+			},
+			{
+				"name": "displayNameToFS",
+				"type": "varchar"
+			},
+			{
+				"name": "typeFromFS",
+				"type": "varchar"
+			},
+			{
+				"name": "typeToFS",
+				"type": "varchar"
+			},
+			{
+				"name": "status",
+				"type": "varchar"
+			},
+			{
+				"name": "fromId",
+				"type": "varchar"
+			},
+			{
+				"name": "toId",
+				"type": "varchar"
+			},
+			{
+				"name": "type",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LeanIX_Application_Relations"
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Delete_Azure_Table_Contents",
+	"properties": {
+		"description": "Calls the Azure Table API and deletes the contents from a table",
+		"activities": [
+			{
+				"name": "Delete_All_Rows_from_AzureTable",
+				"description": "Delete all the rows from an Azure Table",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://saadflabblob.table.core.windows.net/DemoAzureTable(PartitionKey='121',RowKey='222')",
+					"method": "DELETE",
+					"headers": {
+						"Authorization": "SharedKeyLite saadflabblob:enpFKzVGMTkrTXVDak04UGplM1h3RmJvZmZCS2RPLzd2VkVWYk5MZi8wNzFzQ25yeDdmZ0tHZ1hQNElRMjJ6Ukw5R1FlYkt3Si9wYnE0aTI5dUtBd1E9PQ=="
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
