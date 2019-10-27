@@ -90,7 +90,7 @@
 							}
 						},
 						{
-							"name": "Dynamically build the RelativeURL Step 2",
+							"name": "Dynamically build the RelativeURL Step 3",
 							"type": "SetVariable",
 							"dependsOn": [
 								{
@@ -102,7 +102,7 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "RelativeURL",
+								"variableName": "FullyFormedRelativeURL",
 								"value": {
 									"value": "@concat(variables('ApplicationID'),'/relations')",
 									"type": "Expression"
@@ -114,7 +114,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "Dynamically build the RelativeURL Step 2",
+									"activity": "Dynamically build the RelativeURL Step 3",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -149,7 +149,13 @@
 							"inputs": [
 								{
 									"referenceName": "Output_LeanIX_Application_Relations",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FullyFormedRelativeURL": {
+											"value": "@variables('FullyFormedRelativeURL')",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
@@ -167,10 +173,7 @@
 			"ApplicationID": {
 				"type": "String"
 			},
-			"RelativeURL": {
-				"type": "String"
-			},
-			"Debugger": {
+			"FullyFormedRelativeURL": {
 				"type": "String"
 			}
 		},
