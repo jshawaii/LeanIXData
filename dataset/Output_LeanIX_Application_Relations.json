@@ -1,0 +1,15 @@
+{
+	"name": "Output_LeanIX_Application_Relations",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX_Relations",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": ""
+		},
+		"schema": []
+	}
+}
