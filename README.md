@@ -66,3 +66,6 @@ The capabilities built into this lab are:
 [Online Base64 Encoder/Decoder for Dev/Debugging purposes](https://www.base64converter.com/)
 
 [Video of ForEach activity](https://www.youtube.com/watch?v=P9uk-q-N8a4&t=277s)
+
+[Used these instructions to pass parameters from pipeline to Data Set parameters and then having something like the Relative URL field refer to the parameters in the dataset()](https://blog.pragmaticworks.com/azure-data-factory-v2-parameter-passing)
+
