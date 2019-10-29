@@ -19,6 +19,12 @@ The capabilities built into this lab are:
 3) Data Flow (In Public Preview at time of build)<br>
   a. Maps the CSV file for MockPersons to a SQLDB table
   
+## Use case/customer scenarios
+
+###LeanIX Pipelines and DataSets - This is the most extensive customer PoC
+* It has an REST API authentication activity getting and consuming a Bearer token in a Authorization Header
+* It has examples of how to pass parameters, using global pipeline variables, and setting dataset() specific paramaters
+  
 ## References
 
 [Handling Bearer Tokens in Azure Pipeline](https://stackoverflow.com/questions/53859600/handling-bearer-tokens-in-azure-pipeline-for-http-objects)
