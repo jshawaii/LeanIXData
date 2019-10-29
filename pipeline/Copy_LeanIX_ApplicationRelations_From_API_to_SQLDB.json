@@ -226,7 +226,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "Output_LeanIX_Application_Relations",
+									"referenceName": "Output_LeanIX_Relations",
 									"type": "DatasetReference",
 									"parameters": {
 										"FullyFormedRelativeURL": {
@@ -254,6 +254,9 @@
 			"FullyFormedRelativeURL": {
 				"type": "String"
 			}
+		},
+		"folder": {
+			"name": "LeanIX Pipelines/Production Pipelines"
 		},
 		"annotations": []
 	}

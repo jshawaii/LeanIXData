@@ -262,7 +262,7 @@
 			}
 		},
 		"folder": {
-			"name": "LeanIX Pipelines/Unit Testing Pipelines"
+			"name": "LeanIX Pipelines/Production Pipelines"
 		},
 		"annotations": []
 	}
