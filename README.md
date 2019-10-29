@@ -21,7 +21,7 @@ The capabilities built into this lab are:
   
 ## Use case/customer scenarios
 
-###LeanIX Pipelines and DataSets - This is the most extensive customer PoC
+### LeanIX Pipelines and DataSets - This is the most extensive customer PoC
 * It has an REST API authentication activity getting and consuming a Bearer token in a Authorization Header
 * It has examples of how to pass parameters, using global pipeline variables, and setting dataset() specific paramaters
   
