@@ -1,5 +1,5 @@
 {
-	"name": "Output_LeanIX_Application_Relations",
+	"name": "Output_LeanIX_Relations",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX_Relations",
@@ -9,6 +9,9 @@
 			"FullyFormedRelativeURL": {
 				"type": "string"
 			}
+		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
 		},
 		"annotations": [],
 		"type": "RestResource",

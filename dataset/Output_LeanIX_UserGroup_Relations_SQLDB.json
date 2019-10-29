@@ -1,5 +1,5 @@
 {
-	"name": "Output_LeanIX_Application_Relations_SQLDB",
+	"name": "Output_LeanIX_UserGroup_Relations_SQLDB",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Azure_SQLDB",
@@ -46,7 +46,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "LeanIX_Application_Relations"
+			"table": "LeanIX_UserGroup_Relations"
 		}
 	}
 }

@@ -1,5 +1,5 @@
 {
-	"name": "Work_in_Progress_ApplicationsRelations",
+	"name": "Copy_LeanIX_ProjectRelations_From_API_to_SQLDB",
 	"properties": {
 		"activities": [
 			{
@@ -17,10 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT id FROM LeanIX_Application"
+						"sqlReaderQuery": "SELECT id FROM LeanIX_Project"
 					},
 					"dataset": {
-						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"referenceName": "Output_LeanIX_Project_SQLDB",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -52,7 +52,7 @@
 				}
 			},
 			{
-				"name": "GetApplicationRelations_JSON_into_Blob",
+				"name": "GetProjectRelations_JSON_into_Blob",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -82,7 +82,7 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "ApplicationID",
+								"variableName": "ProjectID",
 								"value": {
 									"value": "@{item().id}",
 									"type": "Expression"
@@ -104,13 +104,13 @@
 							"typeProperties": {
 								"variableName": "FullyFormedRelativeURL",
 								"value": {
-									"value": "@concat(variables('ApplicationID'),'/relations')",
+									"value": "@concat(variables('ProjectID'),'/relations')",
 									"type": "Expression"
 								}
 							}
 						},
 						{
-							"name": "Copy_Application_Relations_JSON_to_Blob",
+							"name": "Copy_Project_Relations_JSON_to_Blob",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -142,14 +142,7 @@
 									}
 								},
 								"sink": {
-									"type": "JsonSink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
-									},
-									"formatSettings": {
-										"type": "JsonWriteSettings",
-										"quoteAllText": true
-									}
+									"type": "AzureSqlSink"
 								},
 								"enableStaging": false,
 								"translator": {
@@ -157,7 +150,7 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "$['data'][0]['id']"
+												"path": "['id']"
 											},
 											"sink": {
 												"name": "ID",
@@ -166,7 +159,7 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['displayNameToFS']"
+												"path": "['displayNameToFS']"
 											},
 											"sink": {
 												"name": "displayNameToFS",
@@ -175,7 +168,7 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['typeFromFS']"
+												"path": "['typeFromFS']"
 											},
 											"sink": {
 												"name": "typeFromFS",
@@ -184,7 +177,7 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['typeToFS']"
+												"path": "['typeToFS']"
 											},
 											"sink": {
 												"name": "typeToFS",
@@ -193,7 +186,7 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['status']"
+												"path": "['status']"
 											},
 											"sink": {
 												"name": "status",
@@ -202,7 +195,7 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['fromId']"
+												"path": "['fromId']"
 											},
 											"sink": {
 												"name": "fromId",
@@ -211,7 +204,7 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['toId']"
+												"path": "['toId']"
 											},
 											"sink": {
 												"name": "toId",
@@ -220,19 +213,20 @@
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['type']"
+												"path": "['type']"
 											},
 											"sink": {
 												"name": "type",
 												"type": "String"
 											}
 										}
-									]
+									],
+									"collectionReference": "$['data']"
 								}
 							},
 							"inputs": [
 								{
-									"referenceName": "Output_LeanIX_Application_Relations",
+									"referenceName": "Output_LeanIX_Relations",
 									"type": "DatasetReference",
 									"parameters": {
 										"FullyFormedRelativeURL": {
@@ -244,138 +238,13 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Output_Application_Relations_Json_Blob",
+									"referenceName": "Output_LeanIX_Project_Relations_SQLDB",
 									"type": "DatasetReference"
 								}
 							]
 						}
 					]
 				}
-			},
-			{
-				"name": "Copy_Application_Relations_from_Blob_to_SQLDB",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "GetApplicationRelations_JSON_into_Blob",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*.json",
-							"enablePartitionDiscovery": false
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink"
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "['id']"
-								},
-								"sink": {
-									"name": "ID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['displayNameToFS']"
-								},
-								"sink": {
-									"name": "displayNameToFS",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['typeFromFS']"
-								},
-								"sink": {
-									"name": "typeFromFS",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['typeToFS']"
-								},
-								"sink": {
-									"name": "typeToFS",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['status']"
-								},
-								"sink": {
-									"name": "status",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['fromId']"
-								},
-								"sink": {
-									"name": "fromId",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['toId']"
-								},
-								"sink": {
-									"name": "toId",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['type']"
-								},
-								"sink": {
-									"name": "type",
-									"type": "String"
-								}
-							}
-						],
-						"collectionReference": "$['data']"
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "Output_Application_Relations_Json_Blob",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
-						"type": "DatasetReference"
-					}
-				]
 			}
 		],
 		"variables": {
@@ -384,7 +253,13 @@
 			},
 			"FullyFormedRelativeURL": {
 				"type": "String"
+			},
+			"ProjectID": {
+				"type": "String"
 			}
+		},
+		"folder": {
+			"name": "LeanIX Pipelines/Production Pipelines"
 		},
 		"annotations": []
 	}

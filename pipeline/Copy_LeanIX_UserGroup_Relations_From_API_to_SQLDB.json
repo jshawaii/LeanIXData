@@ -1,9 +1,9 @@
 {
-	"name": "Copy_LeanIX_ApplicationRelations_From_API_to_SQLDB",
+	"name": "Copy_LeanIX_UserGroup_Relations_From_API_to_SQLDB",
 	"properties": {
 		"activities": [
 			{
-				"name": "GetAllApplicationID",
+				"name": "GetAllUserGroupID",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -17,10 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT id FROM LeanIX_Application"
+						"sqlReaderQuery": "SELECT id FROM LeanIX_UserGroup"
 					},
 					"dataset": {
-						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"referenceName": "Output_LeanIX_Project_SQLDB",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -52,7 +52,7 @@
 				}
 			},
 			{
-				"name": "GetApplicationRelations_JSON_into_Blob",
+				"name": "GetUserGroupRelations_JSON_into_Blob",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -62,7 +62,7 @@
 						]
 					},
 					{
-						"activity": "GetAllApplicationID",
+						"activity": "GetAllUserGroupID",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -71,7 +71,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetAllApplicationID').output.value",
+						"value": "@activity('GetAllUserGroupID').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -82,7 +82,7 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "ApplicationID",
+								"variableName": "UserGroupID",
 								"value": {
 									"value": "@{item().id}",
 									"type": "Expression"
@@ -104,13 +104,13 @@
 							"typeProperties": {
 								"variableName": "FullyFormedRelativeURL",
 								"value": {
-									"value": "@concat(variables('ApplicationID'),'/relations')",
+									"value": "@concat(variables('UserGroupID'),'/relations')",
 									"type": "Expression"
 								}
 							}
 						},
 						{
-							"name": "Copy_Application_Relations_JSON_to_Blob",
+							"name": "Copy_UserGroup_Relations_JSON_to_Blob",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -238,7 +238,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
+									"referenceName": "Output_LeanIX_UserGroup_Relations_SQLDB",
 									"type": "DatasetReference"
 								}
 							]
@@ -252,6 +252,12 @@
 				"type": "String"
 			},
 			"FullyFormedRelativeURL": {
+				"type": "String"
+			},
+			"ProjectID": {
+				"type": "String"
+			},
+			"UserGroupID": {
 				"type": "String"
 			}
 		},
