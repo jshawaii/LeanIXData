@@ -75,3 +75,5 @@ The capabilities built into this lab are:
 
 [Used these instructions to pass parameters from pipeline to Data Set parameters and then having something like the Relative URL field refer to the parameters in the dataset()](https://blog.pragmaticworks.com/azure-data-factory-v2-parameter-passing)
 
+[Converting @activity output to string](https://stackoverflow.com/questions/49693338/use-output-from-web-activity-call-as-variable)
+
