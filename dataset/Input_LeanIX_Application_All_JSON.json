@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "?type=Application&pageSize=100&permissions=false"
+			"relativeUrl": "?type=Application&pageSize=100&permissions=false&cursor="
 		},
 		"schema": []
 	}
