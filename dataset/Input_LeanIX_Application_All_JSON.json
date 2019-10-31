@@ -1,0 +1,17 @@
+{
+	"name": "Input_LeanIX_Application_All_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cursor": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
