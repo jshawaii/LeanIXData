@@ -9,7 +9,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "'?type=Application&pageSize=100&permissions=false&cursor='",
+				"value": "?type=Application&pageSize=100&permissions=false&cursor=",
 				"type": "Expression"
 			}
 		},
