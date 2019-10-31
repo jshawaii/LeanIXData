@@ -11,7 +11,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "?type=Application&permissions=false"
+			"relativeUrl": "?type=Application&pagesize=1000&permissions=false"
 		},
 		"schema": []
 	}
