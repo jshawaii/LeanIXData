@@ -1,0 +1,18 @@
+{
+	"name": "Output_LeanIX_All_Application_Json_to_Blob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADFLabBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Application",
+				"container": "raw"
+			}
+		}
+	}
+}
