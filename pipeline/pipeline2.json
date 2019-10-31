@@ -133,7 +133,7 @@
 					],
 					"ifTrueActivities": [
 						{
-							"name": "SetUpperLimit",
+							"name": "SetUpperLimitPlus1",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"userProperties": [],
