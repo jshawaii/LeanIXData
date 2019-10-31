@@ -220,26 +220,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "SetCursor",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "GetFirst100Applications",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "Cursor",
-					"value": {
-						"value": "@activity('GetFirst100Applications').output.cursor",
-						"type": "Expression"
-					}
-				}
 			}
 		],
 		"variables": {

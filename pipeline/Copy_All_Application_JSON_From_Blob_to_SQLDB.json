@@ -20,7 +20,6 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": false,
-							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -145,13 +144,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Output_LeanIX_All_Application_Json_to_Blob",
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					}
 				]
