@@ -1,0 +1,344 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetLeanIXBearerToken",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
+					"method": "POST",
+					"headers": {
+						"Authorization": {
+							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+							"type": "Expression"
+						},
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					"body": "grant_type=client_credentials"
+				}
+			},
+			{
+				"name": "SetTotal",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GetFirst100Applications",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "total",
+					"value": {
+						"value": "@string(activity('GetFirst100Applications').output.total)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "GetFirst100Applications",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "GetLeanIXBearerToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://hawaii.leanix.net/services/pathfinder/v1/factSheets?type=Application&pageSize=100&permissions=false",
+					"method": "GET",
+					"headers": {
+						"Authorization": {
+							"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "DetermineMaxCalls",
+				"description": "Determine how many times to call the REST endpoint to get next set of records.",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "SetTotal",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Maximum",
+					"value": {
+						"value": "@string(div(float(variables('total')),100))",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "RoundUpUpperLimit",
+				"description": "Roundup (if necessary) the upper limit of the calls",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "DetermineMaxCalls",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greater(float(variables('Maximum')),div(int(variables('total')),100))",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "SetUpperLimit",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "UpperLimit",
+								"value": {
+									"value": "@string(int(variables('Maximum')))",
+									"type": "Expression"
+								}
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "SetUpperLimit",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "UpperLimit",
+								"value": {
+									"value": "@string(add(variables('Maximum'),1))",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Until1",
+				"type": "Until",
+				"dependsOn": [
+					{
+						"activity": "RoundUpUpperLimit",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greaterOrEquals(int(variables('LowerLimit')),int(variables('UpperLimit')))",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_LeanIX_Application_JSON",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"additionalHeaders": {
+										"Authorization": {
+											"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+											"type": "Expression"
+										}
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "Input_LeanIX_Application_All_JSON",
+									"type": "DatasetReference",
+									"parameters": {
+										"cursor": {
+											"value": "@concat('?type=Application&pageSize=100&permissions=false&cursor=',variables('Cursor'))",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_Application_SQLDB",
+									"type": "DatasetReference"
+								}
+							]
+						},
+						{
+							"name": "Get100Applications",
+							"type": "WebActivity",
+							"dependsOn": [
+								{
+									"activity": "Copy_LeanIX_Application_JSON",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"url": "https://hawaii.leanix.net/services/pathfinder/v1/factSheets?type=Application&pageSize=100&permissions=false",
+								"method": "GET",
+								"headers": {
+									"Authorization": {
+										"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+										"type": "Expression"
+									}
+								},
+								"linkedServices": [],
+								"datasets": []
+							}
+						},
+						{
+							"name": "SetCurrentCursor",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Get100Applications",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Cursor",
+								"value": {
+									"value": "@activity('Get100Applications').output.cursor",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "IncrementLowerLimit",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "SetCurrentCursor",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "CurrentLimit",
+								"value": {
+									"value": "@string(add(int(variables('LowerLimit')),1))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "SetNewLowerLimit",
+							"description": "Lower Limit is now the Current Limit",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "IncrementLowerLimit",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "LowerLimit",
+								"value": {
+									"value": "@variables('CurrentLimit')",
+									"type": "Expression"
+								}
+							}
+						}
+					],
+					"timeout": "7.00:00:00"
+				}
+			}
+		],
+		"variables": {
+			"Cursor": {
+				"type": "String"
+			},
+			"total": {
+				"type": "String",
+				"defaultValue": "100"
+			},
+			"Maximum": {
+				"type": "String"
+			},
+			"UpperLimit": {
+				"type": "String"
+			},
+			"LowerLimit": {
+				"type": "String",
+				"defaultValue": "0"
+			},
+			"CurrentLimit": {
+				"type": "String",
+				"defaultValue": "0"
+			}
+		},
+		"folder": {
+			"name": "LeanIX Pipelines/Unit Testing Pipelines"
+		},
+		"annotations": []
+	}
+}
