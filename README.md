@@ -77,3 +77,4 @@ The capabilities built into this lab are:
 
 [Converting @activity output to string](https://stackoverflow.com/questions/49693338/use-output-from-web-activity-call-as-variable)
 
+[Running Python code in an ADF Custom Activity](https://stackoverflow.com/questions/48316458/azure-data-factory-python-custom-activity)
