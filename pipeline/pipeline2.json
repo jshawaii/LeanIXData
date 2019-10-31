@@ -140,7 +140,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(add(int(variables('Maximum')),1))",
+									"value": "@string(add(float(variables('Maximum')),1))",
 									"type": "Expression"
 								}
 							}
@@ -162,7 +162,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greaterOrEquals(int(variables('LowerLimit')),int(variables('UpperLimit')))",
+						"value": "@greaterOrEquals(float(variables('LowerLimit')),float(variables('UpperLimit')))",
 						"type": "Expression"
 					},
 					"activities": [
@@ -194,7 +194,121 @@
 								"sink": {
 									"type": "AzureSqlSink"
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "['id']"
+											},
+											"sink": {
+												"name": "id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['name']"
+											},
+											"sink": {
+												"name": "name",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['description']"
+											},
+											"sink": {
+												"name": "description",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['displayName']"
+											},
+											"sink": {
+												"name": "displayName",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['fullName']"
+											},
+											"sink": {
+												"name": "fullname",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdAt']"
+											},
+											"sink": {
+												"name": "createdAt",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['updatedAt']"
+											},
+											"sink": {
+												"name": "updatedAt",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['status']"
+											},
+											"sink": {
+												"name": "status",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['level']"
+											},
+											"sink": {
+												"name": "level",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['score']"
+											},
+											"sink": {
+												"name": "score",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['rev']"
+											},
+											"sink": {
+												"name": "rev",
+												"type": "Int32"
+											}
+										}
+									],
+									"collectionReference": "$['data']"
+								}
 							},
 							"inputs": [
 								{
@@ -235,7 +349,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"url": "https://hawaii.leanix.net/services/pathfinder/v1/factSheets?type=Application&pageSize=100&permissions=false",
+								"url": {
+									"value": "@concat('https://hawaii.leanix.net/services/pathfinder/v1/factSheets?type=Application&pageSize=100&permissions=false&cursor=',variables('Cursor'))",
+									"type": "Expression"
+								},
 								"method": "GET",
 								"headers": {
 									"Authorization": {
@@ -322,7 +439,8 @@
 				"defaultValue": "100"
 			},
 			"Maximum": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "0"
 			},
 			"UpperLimit": {
 				"type": "String"
