@@ -1,17 +1,17 @@
 {
-	"name": "Input_Lean_IX_Application",
+	"name": "Input_LeanIX_Application_First100_JSON",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
-		"folder": {
-			"name": "LeanIX DataSets/JSON"
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "?type=Application&pagesize=100&permissions=false"
+			"relativeUrl": {
+				"value": "?type=Application&pageSize=100&permissions=false",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
