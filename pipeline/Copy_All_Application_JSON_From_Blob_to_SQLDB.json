@@ -1,0 +1,165 @@
+{
+	"name": "Copy_All_Application_JSON_From_Blob_to_SQLDB",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_LeanIX_Application_JSON",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								},
+								"sink": {
+									"name": "description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['displayName']"
+								},
+								"sink": {
+									"name": "displayName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['fullName']"
+								},
+								"sink": {
+									"name": "fullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['createdAt']"
+								},
+								"sink": {
+									"name": "createdAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['updatedAt']"
+								},
+								"sink": {
+									"name": "updatedAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['status']"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['level']"
+								},
+								"sink": {
+									"name": "level",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['score']"
+								},
+								"sink": {
+									"name": "score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['rev']"
+								},
+								"sink": {
+									"name": "rev",
+									"type": "Int32"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Output_LeanIX_All_Application_Json_to_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "LeanIX Pipelines/Unit Testing Pipelines"
+		},
+		"annotations": []
+	}
+}
