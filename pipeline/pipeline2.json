@@ -140,7 +140,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(add(variables('Maximum'),1))",
+									"value": "@string(add(int(variables('Maximum')),1))",
 									"type": "Expression"
 								}
 							}
