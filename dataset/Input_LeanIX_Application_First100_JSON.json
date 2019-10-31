@@ -1,20 +1,15 @@
 {
-	"name": "Input_LeanIX_Application_All_JSON",
+	"name": "Input_LeanIX_Application_First100_JSON",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cursor": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('?type=Application&pageSize=100&permissions=false&cursor=',dataset().cursor)",
+				"value": "'?type=Application&pageSize=100&permissions=false&cursor='",
 				"type": "Expression"
 			}
 		},
