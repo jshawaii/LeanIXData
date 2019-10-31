@@ -1,5 +1,5 @@
 {
-	"name": "Copy_All_LeanIX_JSON",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
@@ -85,7 +85,58 @@
 				}
 			},
 			{
-				"name": "Copy_LeanIX_Project_JSON",
+				"name": "SetTotal",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "LookupNumberOfRecords",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "total",
+					"value": {
+						"value": "div(int(@activity('GetTotalandCursorData').output.total),100)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "LookupNumberOfRecords",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "GetTotalandCursorData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from LeanIX_Total"
+					},
+					"dataset": {
+						"referenceName": "LeanIX_Total_SQLDB",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "GetTotalandCursorData",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -117,93 +168,79 @@
 						}
 					},
 					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"quoteAllText": true
-						}
+						"type": "AzureSqlSink"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['total']"
+								},
+								"sink": {
+									"name": "Total",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['cursor']"
+								},
+								"sink": {
+									"name": "Cursur",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LEANIX_Project_API",
-						"type": "DatasetReference",
-						"parameters": {
-							"-Headers": "$headers"
-						}
+						"referenceName": "Input_Lean_IX_Application",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_Project_JSON_to_BLOB",
+						"referenceName": "LeanIX_Total_SQLDB",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "Copy_LeanIX_UserGroup_JSON",
-				"type": "Copy",
+				"name": "SetCursor",
+				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "GetLeanIXBearerToken",
+						"activity": "LookupNumberOfRecords",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					}
 				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
-						"additionalHeaders": {
-							"Authorization": {
-								"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
-								"type": "Expression"
-							}
-						}
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"quoteAllText": true
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "Input_LeanIX_UserGroup",
-						"type": "DatasetReference"
+					"variableName": "Cursor",
+					"value": {
+						"value": "@activity('GetTotalandCursorData').output.cursor",
+						"type": "Expression"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Output_LeanIX_UserGroups_JSON",
-						"type": "DatasetReference"
-					}
-				]
+				}
 			}
 		],
+		"variables": {
+			"Cursor": {
+				"type": "String"
+			},
+			"total": {
+				"type": "String",
+				"defaultValue": "100"
+			}
+		},
 		"folder": {
-			"name": "LeanIX Pipelines/Production Pipelines"
+			"name": "LeanIX Pipelines/Unit Testing Pipelines"
 		},
 		"annotations": []
 	}
