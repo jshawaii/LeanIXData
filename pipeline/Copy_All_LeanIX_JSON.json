@@ -51,420 +51,669 @@
 							{
 								"source": {
 									"path": "$['status']"
+								},
+								"sink": {
+									"path": "$['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['errors']"
+									"path": "$['errors'][0]"
+								},
+								"sink": {
+									"path": "$['errors'][0]"
 								}
 							},
 							{
 								"source": {
 									"path": "$['total']"
+								},
+								"sink": {
+									"path": "$['total']"
 								}
 							},
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['data'][0]['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['name']"
+									"path": "$['data'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['description']"
+									"path": "$['data'][0]['description']"
+								},
+								"sink": {
+									"path": "$['data'][0]['description']"
 								}
 							},
 							{
 								"source": {
-									"path": "['displayName']"
+									"path": "$['data'][0]['displayName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['displayName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fullName']"
+									"path": "$['data'][0]['fullName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fullName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['type']"
+									"path": "$['data'][0]['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['id']"
+									"path": "$['data'][0]['tags'][0]['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['id']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['name']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['shortName']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['shortName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['shortName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['description']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['description']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['description']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['mode']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['mode']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['mode']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['restrictToFactSheetTypes']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['restrictToFactSheetTypes'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['restrictToFactSheetTypes'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['name']"
+									"path": "$['data'][0]['tags'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['description']"
+									"path": "$['data'][0]['tags'][0]['description']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['description']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['bgColor']"
+									"path": "$['data'][0]['tags'][0]['bgColor']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['bgColor']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['status']"
+									"path": "$['data'][0]['tags'][0]['status']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['name']"
+									"path": "$['data'][0]['fields'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['type']"
+									"path": "$['data'][0]['fields'][0]['data']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['phases'][0]['startDate']"
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['startDate']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['startDate']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['phases'][0]['phase']"
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['phase']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['phase']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['dataType']"
+									"path": "$['data'][0]['fields'][0]['dataType']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['dataType']"
 								}
 							},
 							{
 								"source": {
-									"path": "['relations']"
+									"path": "$['data'][0]['relations'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['relations'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['type']"
+									"path": "$['data'][0]['completion']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['completion']"
+									"path": "$['data'][0]['completion']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['percentage']"
+									"path": "$['data'][0]['completion']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.sourcing']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.sourcing']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.sourcing']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.sourcing']['subCompletions']['subsection.technicalSuitability.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projects']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projects']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projects']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projects']['subCompletions']['subsection.factSheetsAffecting.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.userGroups.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.businessCriticalityFunctionalSuitability.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.businessSupport']['subCompletions']['subsection.factSheetsSupported.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['createdAt']"
+									"path": "$['data'][0]['createdAt']"
+								},
+								"sink": {
+									"path": "$['data'][0]['createdAt']"
 								}
 							},
 							{
 								"source": {
-									"path": "['updatedAt']"
+									"path": "$['data'][0]['updatedAt']"
+								},
+								"sink": {
+									"path": "$['data'][0]['updatedAt']"
 								}
 							},
 							{
 								"source": {
-									"path": "['documents']"
+									"path": "$['data'][0]['documents'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['documents'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['status']"
+									"path": "$['data'][0]['status']"
+								},
+								"sink": {
+									"path": "$['data'][0]['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "['level']"
+									"path": "$['data'][0]['level']"
+								},
+								"sink": {
+									"path": "$['data'][0]['level']"
 								}
 							},
 							{
 								"source": {
-									"path": "['score']"
+									"path": "$['data'][0]['score']"
+								},
+								"sink": {
+									"path": "$['data'][0]['score']"
 								}
 							},
 							{
 								"source": {
-									"path": "['rev']"
+									"path": "$['data'][0]['rev']"
+								},
+								"sink": {
+									"path": "$['data'][0]['rev']"
 								}
 							},
 							{
 								"source": {
-									"path": "['naFields']"
+									"path": "$['data'][0]['naFields'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['naFields'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['subscriptions']"
+									"path": "$['data'][0]['subscriptions'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['subscriptions'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['permittedReadACL']"
+									"path": "$['data'][0]['permittedReadACL'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['permittedReadACL'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['permittedWriteACL']"
+									"path": "$['data'][0]['permittedWriteACL'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['permittedWriteACL'][0]"
 								}
 							},
 							{
 								"source": {
 									"path": "$['cursor']"
+								},
+								"sink": {
+									"path": "$['cursor']"
 								}
 							}
 						],
-						"collectionReference": "$['data']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
@@ -554,525 +803,837 @@
 							{
 								"source": {
 									"path": "$['status']"
+								},
+								"sink": {
+									"path": "$['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['errors']"
+									"path": "$['errors'][0]"
+								},
+								"sink": {
+									"path": "$['errors'][0]"
 								}
 							},
 							{
 								"source": {
 									"path": "$['total']"
+								},
+								"sink": {
+									"path": "$['total']"
 								}
 							},
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['data'][0]['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['name']"
+									"path": "$['data'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['description']"
+									"path": "$['data'][0]['description']"
+								},
+								"sink": {
+									"path": "$['data'][0]['description']"
 								}
 							},
 							{
 								"source": {
-									"path": "['displayName']"
+									"path": "$['data'][0]['displayName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['displayName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fullName']"
+									"path": "$['data'][0]['fullName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fullName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['type']"
+									"path": "$['data'][0]['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['id']"
+									"path": "$['data'][0]['tags'][0]['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['id']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['name']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['shortName']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['shortName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['shortName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['description']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['description']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['description']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['mode']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['mode']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['mode']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['tagGroup']['restrictToFactSheetTypes']"
+									"path": "$['data'][0]['tags'][0]['tagGroup']['restrictToFactSheetTypes'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['tagGroup']['restrictToFactSheetTypes'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['name']"
+									"path": "$['data'][0]['tags'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['description']"
+									"path": "$['data'][0]['tags'][0]['description']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['description']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['bgColor']"
+									"path": "$['data'][0]['tags'][0]['bgColor']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['bgColor']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags'][0]['status']"
+									"path": "$['data'][0]['tags'][0]['status']"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['name']"
+									"path": "$['data'][0]['fields'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['type']"
+									"path": "$['data'][0]['fields'][0]['data']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['phases'][0]['startDate']"
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['startDate']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['startDate']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['phases'][0]['phase']"
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['phase']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['phases'][0]['phase']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['dataType']"
+									"path": "$['data'][0]['fields'][0]['dataType']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['dataType']"
 								}
 							},
 							{
 								"source": {
-									"path": "['relations']"
+									"path": "$['data'][0]['relations'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['relations'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['type']"
+									"path": "$['data'][0]['completion']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['completion']"
+									"path": "$['data'][0]['completion']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['percentage']"
+									"path": "$['data'][0]['completion']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.lifecycle.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.successors.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.predecessors.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectProviders.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.projectBenefit.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectSetup']['subCompletions']['subsection.budgetCosts.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requiredBy.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.requires.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label__']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.projectValueRisk.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label___']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label____']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.projectEnvironment']['subCompletions']['subsection.factSheetsAffected.label_']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['createdAt']"
+									"path": "$['data'][0]['createdAt']"
+								},
+								"sink": {
+									"path": "$['data'][0]['createdAt']"
 								}
 							},
 							{
 								"source": {
-									"path": "['updatedAt']"
+									"path": "$['data'][0]['updatedAt']"
+								},
+								"sink": {
+									"path": "$['data'][0]['updatedAt']"
 								}
 							},
 							{
 								"source": {
-									"path": "['documents']"
+									"path": "$['data'][0]['documents'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['documents'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['status']"
+									"path": "$['data'][0]['status']"
+								},
+								"sink": {
+									"path": "$['data'][0]['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "['level']"
+									"path": "$['data'][0]['level']"
+								},
+								"sink": {
+									"path": "$['data'][0]['level']"
 								}
 							},
 							{
 								"source": {
-									"path": "['score']"
+									"path": "$['data'][0]['score']"
+								},
+								"sink": {
+									"path": "$['data'][0]['score']"
 								}
 							},
 							{
 								"source": {
-									"path": "['rev']"
+									"path": "$['data'][0]['rev']"
+								},
+								"sink": {
+									"path": "$['data'][0]['rev']"
 								}
 							},
 							{
 								"source": {
-									"path": "['naFields']"
+									"path": "$['data'][0]['naFields'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['naFields'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['subscriptions']"
+									"path": "$['data'][0]['subscriptions'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['subscriptions'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['permittedReadACL']"
+									"path": "$['data'][0]['permittedReadACL'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['permittedReadACL'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['permittedWriteACL']"
+									"path": "$['data'][0]['permittedWriteACL'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['permittedWriteACL'][0]"
 								}
 							},
 							{
 								"source": {
 									"path": "$['cursor']"
+								},
+								"sink": {
+									"path": "$['cursor']"
 								}
 							}
 						],
-						"collectionReference": "$['data']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
@@ -1140,270 +1701,429 @@
 							{
 								"source": {
 									"path": "$['status']"
+								},
+								"sink": {
+									"path": "$['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['errors']"
+									"path": "$['errors'][0]"
+								},
+								"sink": {
+									"path": "$['errors'][0]"
 								}
 							},
 							{
 								"source": {
 									"path": "$['total']"
+								},
+								"sink": {
+									"path": "$['total']"
 								}
 							},
 							{
 								"source": {
-									"path": "['id']"
+									"path": "$['data'][0]['id']"
+								},
+								"sink": {
+									"path": "$['data'][0]['id']"
 								}
 							},
 							{
 								"source": {
-									"path": "['name']"
+									"path": "$['data'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['displayName']"
+									"path": "$['data'][0]['displayName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['displayName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fullName']"
+									"path": "$['data'][0]['fullName']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fullName']"
 								}
 							},
 							{
 								"source": {
-									"path": "['type']"
+									"path": "$['data'][0]['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['tags']"
+									"path": "$['data'][0]['tags'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['tags'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['name']"
+									"path": "$['data'][0]['fields'][0]['name']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['value']"
+									"path": "$['data'][0]['fields'][0]['data']['value']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['value']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['data']['type']"
+									"path": "$['data'][0]['fields'][0]['data']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['data']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['fields'][0]['dataType']"
+									"path": "$['data'][0]['fields'][0]['dataType']"
+								},
+								"sink": {
+									"path": "$['data'][0]['fields'][0]['dataType']"
 								}
 							},
 							{
 								"source": {
-									"path": "['relations']"
+									"path": "$['data'][0]['relations'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['relations'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['type']"
+									"path": "$['data'][0]['completion']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['completion']"
+									"path": "$['data'][0]['completion']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['percentage']"
+									"path": "$['data'][0]['completion']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.children.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.dependencies']['subCompletions']['subsection.parents.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.information']['subCompletions']['subsection.nameDescription.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['type']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['type']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['type']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['completion']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['completion']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['completion']"
 								}
 							},
 							{
 								"source": {
-									"path": "['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['percentage']"
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['percentage']"
+								},
+								"sink": {
+									"path": "$['data'][0]['completion']['subCompletions']['section.demandManagement']['subCompletions']['subsection.factSheetsUsed.label__']['percentage']"
 								}
 							},
 							{
 								"source": {
-									"path": "['createdAt']"
+									"path": "$['data'][0]['createdAt']"
+								},
+								"sink": {
+									"path": "$['data'][0]['createdAt']"
 								}
 							},
 							{
 								"source": {
-									"path": "['updatedAt']"
+									"path": "$['data'][0]['updatedAt']"
+								},
+								"sink": {
+									"path": "$['data'][0]['updatedAt']"
 								}
 							},
 							{
 								"source": {
-									"path": "['documents']"
+									"path": "$['data'][0]['documents'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['documents'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['status']"
+									"path": "$['data'][0]['status']"
+								},
+								"sink": {
+									"path": "$['data'][0]['status']"
 								}
 							},
 							{
 								"source": {
-									"path": "['level']"
+									"path": "$['data'][0]['level']"
+								},
+								"sink": {
+									"path": "$['data'][0]['level']"
 								}
 							},
 							{
 								"source": {
-									"path": "['score']"
+									"path": "$['data'][0]['score']"
+								},
+								"sink": {
+									"path": "$['data'][0]['score']"
 								}
 							},
 							{
 								"source": {
-									"path": "['rev']"
+									"path": "$['data'][0]['rev']"
+								},
+								"sink": {
+									"path": "$['data'][0]['rev']"
 								}
 							},
 							{
 								"source": {
-									"path": "['naFields']"
+									"path": "$['data'][0]['naFields'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['naFields'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['subscriptions']"
+									"path": "$['data'][0]['subscriptions'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['subscriptions'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['permittedReadACL']"
+									"path": "$['data'][0]['permittedReadACL'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['permittedReadACL'][0]"
 								}
 							},
 							{
 								"source": {
-									"path": "['permittedWriteACL']"
+									"path": "$['data'][0]['permittedWriteACL'][0]"
+								},
+								"sink": {
+									"path": "$['data'][0]['permittedWriteACL'][0]"
 								}
 							},
 							{
 								"source": {
 									"path": "$['cursor']"
+								},
+								"sink": {
+									"path": "$['cursor']"
 								}
 							}
 						],
-						"collectionReference": "$['data']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
