@@ -5,18 +5,10 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cursor": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": {
-				"value": "@dataset().cursor",
-				"type": "Expression"
-			}
+			"relativeUrl": "?type=Application&pageSize=100&permissions=false"
 		},
 		"schema": []
 	}
