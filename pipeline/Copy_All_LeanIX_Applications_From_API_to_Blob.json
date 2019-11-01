@@ -1,6 +1,7 @@
 {
-	"name": "pipeline7",
+	"name": "Copy_All_LeanIX_Applications_From_API_to_Blob",
 	"properties": {
+		"description": "This pipeline uses the maximum pageSize and iterates through using the cursor to get ALL of the Applications Factsheets into multiple JSON files in Blob.",
 		"activities": [
 			{
 				"name": "GetLeanIXBearerToken",
@@ -320,7 +321,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FilenameSuffix": {
-											"value": "@concat(variables('CurrentLimit'),'json')",
+											"value": "@concat(variables('CurrentLimit'),'.json')",
 											"type": "Expression"
 										}
 									}

@@ -301,7 +301,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LeanIX_Application_First100_JSON",
+						"referenceName": "Input_LeanIX_Application_100_JSON",
 						"type": "DatasetReference"
 					}
 				],
@@ -491,7 +491,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LeanIX_Application_First100_JSON",
+						"referenceName": "Input_LeanIX_Application_100_JSON",
 						"type": "DatasetReference"
 					}
 				],

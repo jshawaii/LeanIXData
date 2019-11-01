@@ -1,5 +1,5 @@
 {
-	"name": "pipeline2",
+	"name": "WorkInProgress_Copy_All_LeanIX_Application",
 	"properties": {
 		"activities": [
 			{
@@ -153,7 +153,7 @@
 				"type": "Until",
 				"dependsOn": [
 					{
-						"activity": "IncrementLowerLimit",
+						"activity": "InitialIncrementLowerLimit",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -162,7 +162,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greaterOrEquals(int(variables('LowerLimit')),int(variables('UpperLimit')))",
+						"value": "@greater(int(variables('CurrentLimit')),int(variables('UpperLimit')))",
 						"type": "Expression"
 					},
 					"activities": [
@@ -332,14 +332,7 @@
 						{
 							"name": "Get100Applications",
 							"type": "WebActivity",
-							"dependsOn": [
-								{
-									"activity": "Copy_LeanIX_Application_JSON",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"policy": {
 								"timeout": "7.00:00:00",
 								"retry": 0,
@@ -373,6 +366,12 @@
 									"dependencyConditions": [
 										"Succeeded"
 									]
+								},
+								{
+									"activity": "Copy_LeanIX_Application_JSON",
+									"dependencyConditions": [
+										"Succeeded"
+									]
 								}
 							],
 							"userProperties": [],
@@ -385,7 +384,27 @@
 							}
 						},
 						{
-							"name": "IncrementLowerLimit",
+							"name": "IncrementCurrentLimit",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "SetPreviousLimitToCurrent_B4_increase",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "CurrentLimit",
+								"value": {
+									"value": "@string(add(int(variables('PreviousLimit')),1))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "SetPreviousLimitToCurrent_B4_increase",
 							"type": "SetVariable",
 							"dependsOn": [
 								{
@@ -397,28 +416,7 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "CurrentLimit",
-								"value": {
-									"value": "@string(add(int(variables('LowerLimit')),1))",
-									"type": "Expression"
-								}
-							}
-						},
-						{
-							"name": "SetNewLowerLimit",
-							"description": "Lower Limit is now the Current Limit",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "IncrementLowerLimit",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "LowerLimit",
+								"variableName": "PreviousLimit",
 								"value": {
 									"value": "@variables('CurrentLimit')",
 									"type": "Expression"
@@ -594,7 +592,7 @@
 				]
 			},
 			{
-				"name": "IncrementLowerLimit",
+				"name": "InitialIncrementLowerLimit",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -608,7 +606,7 @@
 				"typeProperties": {
 					"variableName": "CurrentLimit",
 					"value": {
-						"value": "@string(add(variables('LowerLimit'),1))",
+						"value": "@string(add(int(variables('PreviousLimit')),1))",
 						"type": "Expression"
 					}
 				}
@@ -649,7 +647,7 @@
 			"UpperLimit": {
 				"type": "String"
 			},
-			"LowerLimit": {
+			"PreviousLimit": {
 				"type": "String",
 				"defaultValue": "0"
 			},

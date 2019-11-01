@@ -187,7 +187,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LeanIX_Application_First100_JSON",
+						"referenceName": "Input_LeanIX_Application_100_JSON",
 						"type": "DatasetReference"
 					}
 				],
@@ -414,14 +414,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LeanIX_Next_100_Application_JSON",
-						"type": "DatasetReference",
-						"parameters": {
-							"Cursor": {
-								"value": "@variables('Cursor')",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "Input_LeanIX_First_100_Application_JSON",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [

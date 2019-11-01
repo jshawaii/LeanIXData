@@ -5,11 +5,6 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"Cursor": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
