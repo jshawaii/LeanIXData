@@ -12,6 +12,12 @@
 		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('?type=Project&pageSize=100&permissions=false&cursor=',dataset().Cursor)",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }
