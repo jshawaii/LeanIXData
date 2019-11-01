@@ -1,7 +1,7 @@
 # Data Factory Demo Environment
 Source control for js-ADF in MAC
 
-This is a lab environment built for demos and test purposes using Azure Data Factory.
+This is a lab environment built for demos, tests, and PoC purposes using Azure Data Factory v2.
 
 The capabilities built into this lab are:
 
