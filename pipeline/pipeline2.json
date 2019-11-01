@@ -125,7 +125,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(int(variables('Maximum')))",
+									"value": "@string(div(int(variables('total')),100))",
 									"type": "Expression"
 								}
 							}
@@ -140,7 +140,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(add(int(variables('Maximum')),1))",
+									"value": "@string(add(div(int(variables('total')),100),1))",
 									"type": "Expression"
 								}
 							}
@@ -153,7 +153,7 @@
 				"type": "Until",
 				"dependsOn": [
 					{
-						"activity": "RoundUpUpperLimit",
+						"activity": "IncrementLowerLimit",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -162,7 +162,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greaterOrEquals(float(variables('LowerLimit')),float(variables('UpperLimit')))",
+						"value": "@greaterOrEquals(int(variables('LowerLimit')),int(variables('UpperLimit')))",
 						"type": "Expression"
 					},
 					"activities": [
@@ -312,8 +312,14 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "Input_LeanIX_Application_First100_JSON",
-									"type": "DatasetReference"
+									"referenceName": "Input_LeanIX_Application_100_JSON",
+									"type": "DatasetReference",
+									"parameters": {
+										"Cursor": {
+											"value": "@variables('Cursor')",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
@@ -353,7 +359,9 @@
 										"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
 										"type": "Expression"
 									}
-								}
+								},
+								"linkedServices": [],
+								"datasets": []
 							}
 						},
 						{
@@ -419,6 +427,210 @@
 						}
 					],
 					"timeout": "7.00:00:00"
+				}
+			},
+			{
+				"name": "Copy_LeanIX_First100_Application_JSON",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "RoundUpUpperLimit",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"additionalHeaders": {
+							"Authorization": {
+								"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
+								"type": "Expression"
+							}
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								},
+								"sink": {
+									"name": "description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['displayName']"
+								},
+								"sink": {
+									"name": "displayName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['fullName']"
+								},
+								"sink": {
+									"name": "fullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['createdAt']"
+								},
+								"sink": {
+									"name": "createdAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['updatedAt']"
+								},
+								"sink": {
+									"name": "updatedAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['status']"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['level']"
+								},
+								"sink": {
+									"name": "level",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['score']"
+								},
+								"sink": {
+									"name": "score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['rev']"
+								},
+								"sink": {
+									"name": "rev",
+									"type": "Int32"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Input_LeanIX_First_100_Application_JSON",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "IncrementLowerLimit",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Copy_LeanIX_First100_Application_JSON",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "CurrentLimit",
+					"value": {
+						"value": "@string(add(variables('LowerLimit'),1))",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "SetFirstCursor",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GetFirst100Applications",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Cursor",
+					"value": {
+						"value": "@activity('GetFirst100Applications').output.cursor",
+						"type": "Expression"
+					}
 				}
 			}
 		],

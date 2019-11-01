@@ -1,5 +1,5 @@
 {
-	"name": "Input_LeanIX_Next_100_Application_JSON",
+	"name": "Input_LeanIX_First_100_Application_JSON",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
@@ -14,7 +14,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('?type=Application&pageSize=100&permissions=false&cursor=',dataset().Cursor)",
+				"value": "?type=Application&pageSize=100&permissions=false",
 				"type": "Expression"
 			}
 		},
