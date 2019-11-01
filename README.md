@@ -21,11 +21,18 @@ The capabilities built into this lab are:
   
 ## Use case/customer scenarios
 
-### LeanIX Pipelines and DataSets - This is the most extensive customer PoC
-* It has an REST API authentication activity getting and consuming a Bearer token in a Authorization Header
-* It has examples of how to pass parameters, using global pipeline variables, and setting dataset() specific paramaters
+### State of Hawaii - LeanIX Pipelines and DataSets - This is the most extensive customer PoC
+* REST API authentication activity getting and consuming a Bearer token in a Authorization Header
+* Examples of how to pass parameters, using global pipeline variables, and setting dataset() specific paramaters
+* Examples of using the Until and ForEach iterative loops
+* Examples of setting/consuming pageSize parameter for REST APIs that return results one page at a time
+
+### San Francisco Department of Public Works
+* Consuming Azure Tables REST API
   
 ## References
+
+### General
 
 [Handling Bearer Tokens in Azure Pipeline](https://stackoverflow.com/questions/53859600/handling-bearer-tokens-in-azure-pipeline-for-http-objects)
 
