@@ -159,6 +159,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Demo Pipelines"
+		},
 		"annotations": []
 	}
 }
