@@ -320,7 +320,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FilenameSuffix": {
-											"value": "@variables('CurrentLimit')",
+											"value": "@concat(variables('CurrentLimit'),'json')",
 											"type": "Expression"
 										}
 									}
