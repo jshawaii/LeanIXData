@@ -90,6 +90,8 @@ The capabilities built into this lab are:
 
 [Query timeout and pagination for Azure Tables](https://docs.microsoft.com/en-us/rest/api/storageservices/query-timeout-and-pagination)
 
+[Authorize requests to Azure Storage](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage)
+
 ### LeanIX specific references
 
 [LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
