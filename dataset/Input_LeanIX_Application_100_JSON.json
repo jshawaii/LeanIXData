@@ -1,5 +1,5 @@
 {
-	"name": "Input_LeanIX_Next_100_Application_JSON",
+	"name": "Input_LeanIX_Application_100_JSON",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"Cursor": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": " "
 			}
 		},
 		"annotations": [],

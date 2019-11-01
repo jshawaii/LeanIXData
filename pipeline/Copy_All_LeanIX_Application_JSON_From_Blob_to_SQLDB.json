@@ -1,10 +1,10 @@
 {
-	"name": "pipeline5",
+	"name": "Copy_All_LeanIX_Application_JSON_From_Blob_to_SQLDB",
 	"properties": {
 		"activities": [
 			{
-				"name": "GetLeanIXBearerToken",
-				"type": "WebActivity",
+				"name": "Copy_LeanIX_Application_JSON",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,78 +15,13 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
-					"method": "POST",
-					"headers": {
-						"Authorization": {
-							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
-							"type": "Expression"
-						},
-						"Content-Type": "application/x-www-form-urlencoded"
-					},
-					"body": "grant_type=client_credentials"
-				}
-			},
-			{
-				"name": "GetFirst100Applications",
-				"type": "WebActivity",
-				"dependsOn": [
-					{
-						"activity": "GetLeanIXBearerToken",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"url": "https://hawaii.leanix.net/services/pathfinder/v1/factSheets?type=Application&pageSize=100&permissions=false",
-					"method": "GET",
-					"headers": {
-						"Authorization": {
-							"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
-							"type": "Expression"
-						}
-					}
-				}
-			},
-			{
-				"name": "Copy_First100_LeanIX_Application_JSON",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "GetLeanIXBearerToken",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
 					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
-						"additionalHeaders": {
-							"Authorization": {
-								"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
-								"type": "Expression"
-							}
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
 						}
 					},
 					"sink": {
@@ -210,43 +145,18 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LeanIX_Application_First100_JSON",
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"variables": {
-			"Cursor": {
-				"type": "String",
-				"defaultValue": " "
-			},
-			"total": {
-				"type": "String",
-				"defaultValue": "100"
-			},
-			"Maximum": {
-				"type": "String",
-				"defaultValue": "0"
-			},
-			"UpperLimit": {
-				"type": "String"
-			},
-			"LowerLimit": {
-				"type": "String",
-				"defaultValue": "0"
-			},
-			"CurrentLimit": {
-				"type": "String",
-				"defaultValue": "0"
-			}
-		},
 		"folder": {
 			"name": "LeanIX Pipelines/Unit Testing Pipelines"
 		},

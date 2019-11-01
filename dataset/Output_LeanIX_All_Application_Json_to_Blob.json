@@ -5,11 +5,20 @@
 			"referenceName": "ADFLabBlob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FilenameSuffix": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('Application-',dataset().FilenameSuffix)",
+					"type": "Expression"
+				},
 				"folderPath": "Application",
 				"container": "raw"
 			}

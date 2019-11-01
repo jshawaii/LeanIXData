@@ -1,5 +1,5 @@
 {
-	"name": "pipeline3",
+	"name": "WorkInProgress_Copy_All_LeanIX_Application",
 	"properties": {
 		"activities": [
 			{
@@ -125,7 +125,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(int(variables('Maximum')))",
+									"value": "@string(div(int(variables('total')),100))",
 									"type": "Expression"
 								}
 							}
@@ -140,7 +140,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(add(float(variables('Maximum')),1))",
+									"value": "@string(add(div(int(variables('total')),100),1))",
 									"type": "Expression"
 								}
 							}
@@ -153,7 +153,7 @@
 				"type": "Until",
 				"dependsOn": [
 					{
-						"activity": "RoundUpUpperLimit",
+						"activity": "InitialIncrementLowerLimit",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -162,7 +162,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greaterOrEquals(float(variables('LowerLimit')),float(variables('UpperLimit')))",
+						"value": "@greater(int(variables('CurrentLimit')),int(variables('UpperLimit')))",
 						"type": "Expression"
 					},
 					"activities": [
@@ -312,11 +312,11 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "Input_LeanIX_Application_First100_JSON",
+									"referenceName": "Input_LeanIX_Application_100_JSON",
 									"type": "DatasetReference",
 									"parameters": {
-										"cursor": {
-											"value": "@concat('?type=Application&pageSize=100&permissions=false&cursor=',variables('Cursor'))",
+										"Cursor": {
+											"value": "@variables('Cursor')",
 											"type": "Expression"
 										}
 									}
@@ -332,14 +332,7 @@
 						{
 							"name": "Get100Applications",
 							"type": "WebActivity",
-							"dependsOn": [
-								{
-									"activity": "Copy_LeanIX_Application_JSON",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"policy": {
 								"timeout": "7.00:00:00",
 								"retry": 0,
@@ -359,7 +352,9 @@
 										"value": "@concat(string(activity('GetLeanIXBearerToken').output.token_type),' ',string(activity('GetLeanIXBearerToken').output.access_token))",
 										"type": "Expression"
 									}
-								}
+								},
+								"linkedServices": [],
+								"datasets": []
 							}
 						},
 						{
@@ -368,6 +363,12 @@
 							"dependsOn": [
 								{
 									"activity": "Get100Applications",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								},
+								{
+									"activity": "Copy_LeanIX_Application_JSON",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -383,7 +384,27 @@
 							}
 						},
 						{
-							"name": "IncrementLowerLimit",
+							"name": "IncrementCurrentLimit",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "SetPreviousLimitToCurrent_B4_increase",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "CurrentLimit",
+								"value": {
+									"value": "@string(add(int(variables('PreviousLimit')),1))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "SetPreviousLimitToCurrent_B4_increase",
 							"type": "SetVariable",
 							"dependsOn": [
 								{
@@ -395,28 +416,7 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "CurrentLimit",
-								"value": {
-									"value": "@string(add(int(variables('LowerLimit')),1))",
-									"type": "Expression"
-								}
-							}
-						},
-						{
-							"name": "SetNewLowerLimit",
-							"description": "Lower Limit is now the Current Limit",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "IncrementLowerLimit",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "LowerLimit",
+								"variableName": "PreviousLimit",
 								"value": {
 									"value": "@variables('CurrentLimit')",
 									"type": "Expression"
@@ -428,11 +428,11 @@
 				}
 			},
 			{
-				"name": "Copy_First100_LeanIX_Application_JSON",
+				"name": "Copy_LeanIX_First100_Application_JSON",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "GetLeanIXBearerToken",
+						"activity": "RoundUpUpperLimit",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -580,7 +580,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Input_LeanIX_Application_First100_JSON",
+						"referenceName": "Input_LeanIX_First_100_Application_JSON",
 						"type": "DatasetReference"
 					}
 				],
@@ -592,7 +592,27 @@
 				]
 			},
 			{
-				"name": "Set_First_100_CurrentCursor",
+				"name": "InitialIncrementLowerLimit",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Copy_LeanIX_First100_Application_JSON",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "CurrentLimit",
+					"value": {
+						"value": "@string(add(int(variables('PreviousLimit')),1))",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "SetFirstCursor",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -606,7 +626,7 @@
 				"typeProperties": {
 					"variableName": "Cursor",
 					"value": {
-						"value": "@activity('GetFirst100Applications').output.curosr",
+						"value": "@activity('GetFirst100Applications').output.cursor",
 						"type": "Expression"
 					}
 				}
@@ -627,7 +647,7 @@
 			"UpperLimit": {
 				"type": "String"
 			},
-			"LowerLimit": {
+			"PreviousLimit": {
 				"type": "String",
 				"defaultValue": "0"
 			},

@@ -1,5 +1,5 @@
 {
-	"name": "Input_LeanIX_Application_First100_JSON",
+	"name": "Input_LeanIX_First_100_Application_JSON",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
