@@ -1,6 +1,7 @@
 {
 	"name": "Copy_All_LeanIX_JSON",
 	"properties": {
+		"description": "This pipeline only copies the first 100 records (because pageSize=100) which is the max for LeanIX. This pipeline has been superseded by the Copy_All_LeanIX_*_From_API_to_Blob_then_to_SQLDB pipelines ",
 		"activities": [
 			{
 				"name": "Copy_LeanIX_Application_JSON",
@@ -203,7 +204,7 @@
 			}
 		],
 		"folder": {
-			"name": "LeanIX Pipelines/Production Pipelines"
+			"name": "LeanIX Pipelines/Deprecated Pipelines"
 		},
 		"annotations": []
 	}
