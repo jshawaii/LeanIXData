@@ -150,7 +150,7 @@
 				}
 			},
 			{
-				"name": "Until1",
+				"name": "Do_Until_CurrentLimit_exeeds_Max",
 				"type": "Until",
 				"dependsOn": [
 					{
@@ -313,7 +313,8 @@
 									"type": "JsonSource",
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
-										"recursive": true
+										"recursive": false,
+										"enablePartitionDiscovery": false
 									}
 								},
 								"dataset": {
@@ -338,7 +339,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Until1",
+						"activity": "Do_Until_CurrentLimit_exeeds_Max",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -483,13 +484,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "All_LeanIX_Application_Json_Blob",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable2",
+						"referenceName": "Output_LeanIX_Application_SQLDB",
 						"type": "DatasetReference"
 					}
 				]

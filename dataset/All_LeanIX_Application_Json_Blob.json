@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "All_LeanIX_Application_Json_Blob",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADFLabBlob",
