@@ -52,7 +52,7 @@
 				}
 			},
 			{
-				"name": "GetUserGroupRelations_JSON_into_Blob",
+				"name": "GetUserGroupRelations_JSON_into_SQLDB",
 				"type": "ForEach",
 				"dependsOn": [
 					{

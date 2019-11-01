@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "GetAllApplicationID",
+				"name": "GetAllProjectID",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -62,7 +62,7 @@
 						]
 					},
 					{
-						"activity": "GetAllApplicationID",
+						"activity": "GetAllProjectID",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -71,7 +71,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetAllApplicationID').output.value",
+						"value": "@activity('GetAllProjectID').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -110,7 +110,7 @@
 							}
 						},
 						{
-							"name": "Copy_Project_Relations_JSON_to_Blob",
+							"name": "Copy_Project_Relations_JSON_to_SQLDB",
 							"type": "Copy",
 							"dependsOn": [
 								{
