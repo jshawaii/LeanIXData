@@ -1,6 +1,7 @@
 {
 	"name": "Output_LeanIX_Application_SQLDB",
 	"properties": {
+		"description": "The is the SQLDB dataset that we will use to write the rows of Application factsheets to.",
 		"linkedServiceName": {
 			"referenceName": "Azure_SQLDB",
 			"type": "LinkedServiceReference"
