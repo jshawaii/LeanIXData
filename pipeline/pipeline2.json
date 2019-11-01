@@ -220,7 +220,13 @@
 							"outputs": [
 								{
 									"referenceName": "Output_All_LeanIX_UserGroup_Json_Blob",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FilenameSuffix": {
+											"value": "@concat(variables('CurrentLimit'),'.json')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						},
@@ -308,12 +314,11 @@
 									"type": "JsonSource",
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
-										"recursive": false,
-										"enablePartitionDiscovery": false
+										"recursive": true
 									}
 								},
 								"dataset": {
-									"referenceName": "Output_LeanIX_All_Project_Json_to_Blob",
+									"referenceName": "Output_All_LeanIX_UserGroup_Json_Blob",
 									"type": "DatasetReference",
 									"parameters": {
 										"FilenameSuffix": {
@@ -328,168 +333,6 @@
 					],
 					"timeout": "7.00:00:00"
 				}
-			},
-			{
-				"name": "Copy_LeanIX_Application_JSON_to_SQLDB",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Do_Until_CurrentLimit_exeeds_Max",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": false,
-							"wildcardFolderPath": "*.json",
-							"wildcardFileName": "*.json",
-							"enablePartitionDiscovery": false
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink"
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['name']"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['description']"
-								},
-								"sink": {
-									"name": "description",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['displayName']"
-								},
-								"sink": {
-									"name": "displayName",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['fullName']"
-								},
-								"sink": {
-									"name": "fullname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['type']"
-								},
-								"sink": {
-									"name": "type",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['createdAt']"
-								},
-								"sink": {
-									"name": "createdAt",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['updatedAt']"
-								},
-								"sink": {
-									"name": "updatedAt",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['status']"
-								},
-								"sink": {
-									"name": "status",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['level']"
-								},
-								"sink": {
-									"name": "level",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['score']"
-								},
-								"sink": {
-									"name": "score",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['rev']"
-								},
-								"sink": {
-									"name": "rev",
-									"type": "Int32"
-								}
-							}
-						],
-						"collectionReference": "$['data']"
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "All_LeanIX_Project_Json_Blob",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Output_LeanIX_Project_SQLDB",
-						"type": "DatasetReference"
-					}
-				]
 			}
 		],
 		"variables": {

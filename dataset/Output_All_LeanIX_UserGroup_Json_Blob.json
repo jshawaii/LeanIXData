@@ -5,11 +5,20 @@
 			"referenceName": "ADFLabBlob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FilenameSuffix": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('UserGroup-',dataset().FilenameSuffix)",
+					"type": "Expression"
+				},
 				"folderPath": "UserGroup",
 				"container": "raw"
 			}
