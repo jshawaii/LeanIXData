@@ -88,6 +88,8 @@ The capabilities built into this lab are:
 
 [How to use Azure Storage APIs without SDK](https://tsmatz.wordpress.com/2016/07/06/how-to-get-azure-storage-rest-api-authorization-header/)
 
+[Query timeout and pagination for Azure Tables](https://docs.microsoft.com/en-us/rest/api/storageservices/query-timeout-and-pagination)
+
 ### LeanIX specific references
 
 [LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
