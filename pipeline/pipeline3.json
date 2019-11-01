@@ -1,9 +1,9 @@
 {
-	"name": "Copy_All_LeanIX_Application_JSON_From_Blob_to_SQLDB",
+	"name": "pipeline3",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_LeanIX_Application_JSON",
+				"name": "Copy_LeanIX_Project_JSON_to_SQLDB",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -19,7 +19,7 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": false,
+							"recursive": true,
 							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						}
@@ -145,21 +145,18 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "All_LeanIX_Application_Json_Blob",
+						"referenceName": "All_LeanIX_Project_Json_Blob",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable2",
+						"referenceName": "Output_LeanIX_Project_SQLDB",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"folder": {
-			"name": "LeanIX Pipelines/Unit Testing Pipelines"
-		},
 		"annotations": []
 	}
 }
