@@ -1,6 +1,7 @@
 {
 	"name": "Input_LeanIX_Application_100_JSON",
 	"properties": {
+		"description": "This dataset is used to populate each 100 set of Application pulled from the API.",
 		"linkedServiceName": {
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"

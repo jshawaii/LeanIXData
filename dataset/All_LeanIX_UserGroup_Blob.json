@@ -5,6 +5,9 @@
 			"referenceName": "ADFLabBlob",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {

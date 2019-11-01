@@ -1,9 +1,13 @@
 {
 	"name": "All_LeanIX_Application_Json_Blob",
 	"properties": {
+		"description": "This dataset is the raw/Application/*.json for ALL the Application Factsheets (max 100 per file)",
 		"linkedServiceName": {
 			"referenceName": "ADFLabBlob",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
 		},
 		"annotations": [],
 		"type": "Json",
