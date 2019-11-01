@@ -41,10 +41,6 @@ The capabilities built into this lab are:
 
 [Dark mode for SSMS](https://www.sqlshack.com/setting-up-the-dark-theme-in-sql-server-management-studio/)
 
-[LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
-
-[Convert to base64 for the LeanIX apitoken](https://www.base64encode.org/)
-
 [Discussion on how to format the body of a Web pipeline](https://social.msdn.microsoft.com/Forums/azure/en-US/c826f2a8-fa23-4513-bf72-51c97f36b407/the-format-of-body-for-a-post-request-in-web-activity-in-azure-data-factory)
 
 [Get JSON reponse in a Web Activity](https://feedback.azure.com/forums/270578-data-factory/suggestions/34190236-get-the-json-response-in-a-web-activity)
@@ -57,24 +53,39 @@ The capabilities built into this lab are:
 
 [For Each activity in Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/control-flow-for-each-activity)
 
-[Azure Table Service REST API](https://docs.microsoft.com/en-us/rest/api/storageservices/table-service-rest-api)
-
-[Testing Azure REST APIs with Postman](https://www.youtube.com/watch?v=ujzrq8Fg9Gc)
-
-[Discussion - Setting UTC Date variable in Postman to pass as a Header](https://gist.github.com/lsloan/8b986e4ac194dc01de35c017f355e455)
-
-[Hash signature in Postman](https://stackoverflow.com/questions/52974244/concatenate-hex-256sha-hash-a-signature)
-
-[Creating HMAC in Postman](https://gauravds.blogspot.com/2016/06/creating-hmac-in-postman-using-cryptojs.html)
-
-[How to use Azure Storage APIs without SDK](https://tsmatz.wordpress.com/2016/07/06/how-to-get-azure-storage-rest-api-authorization-header/)
-
-[Online Base64 Encoder/Decoder for Dev/Debugging purposes](https://www.base64converter.com/)
-
-[Video of ForEach activity](https://www.youtube.com/watch?v=P9uk-q-N8a4&t=277s)
-
 [Used these instructions to pass parameters from pipeline to Data Set parameters and then having something like the Relative URL field refer to the parameters in the dataset()](https://blog.pragmaticworks.com/azure-data-factory-v2-parameter-passing)
 
 [Converting @activity output to string](https://stackoverflow.com/questions/49693338/use-output-from-web-activity-call-as-variable)
 
 [Running Python code in an ADF Custom Activity](https://stackoverflow.com/questions/48316458/azure-data-factory-python-custom-activity)
+
+### Online tools (especially useful for converting hashes like Base64, used in Authorization headers)
+
+[Convert to base64 for the LeanIX apitoken](https://www.base64encode.org/)
+
+[Testing Azure REST APIs with Postman](https://www.youtube.com/watch?v=ujzrq8Fg9Gc)
+
+[Hash signature in Postman](https://stackoverflow.com/questions/52974244/concatenate-hex-256sha-hash-a-signature)
+
+[Creating HMAC in Postman](https://gauravds.blogspot.com/2016/06/creating-hmac-in-postman-using-cryptojs.html)
+
+[Discussion - Setting UTC Date variable in Postman to pass as a Header](https://gist.github.com/lsloan/8b986e4ac194dc01de35c017f355e455)
+
+[Online Base64 Encoder/Decoder for Dev/Debugging purposes](https://www.base64converter.com/)
+
+### Consuming Azure Tables REST API
+
+[Azure Table Service REST API](https://docs.microsoft.com/en-us/rest/api/storageservices/table-service-rest-api)
+
+[How to use Azure Storage APIs without SDK](https://tsmatz.wordpress.com/2016/07/06/how-to-get-azure-storage-rest-api-authorization-header/)
+
+### LeanIX specific references
+
+[LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
+
+[Pathfinder REST API explorer - good for debugging and consuming LeanIX APIs](https://hawaii.leanix.net/services/pathfinder/v1/docs/#!/factSheets/getFactSheetRelations)
+
+### Videos
+
+[Video of ForEach activity](https://www.youtube.com/watch?v=P9uk-q-N8a4&t=277s)
+
