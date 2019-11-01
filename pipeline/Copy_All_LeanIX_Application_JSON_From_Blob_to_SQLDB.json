@@ -1,5 +1,5 @@
 {
-	"name": "Copy_All_Application_JSON_From_Blob_to_SQLDB",
+	"name": "Copy_All_LeanIX_Application_JSON_From_Blob_to_SQLDB",
 	"properties": {
 		"activities": [
 			{
