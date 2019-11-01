@@ -140,7 +140,7 @@
 							"typeProperties": {
 								"variableName": "UpperLimit",
 								"value": {
-									"value": "@string(add(float(variables('Maximum')),1))",
+									"value": "@string(add(int(variables('Maximum')),1))",
 									"type": "Expression"
 								}
 							}
@@ -313,13 +313,7 @@
 							"inputs": [
 								{
 									"referenceName": "Input_LeanIX_Application_First100_JSON",
-									"type": "DatasetReference",
-									"parameters": {
-										"cursor": {
-											"value": "@concat('?type=Application&pageSize=100&permissions=false&cursor=',variables('Cursor'))",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
