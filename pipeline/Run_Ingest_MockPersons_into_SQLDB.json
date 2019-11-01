@@ -14,15 +14,12 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "MapMockPersonsCSVtoSQLDB",
-						"type": "DataFlowReference"
-					}
-				}
+				"userProperties": []
 			}
 		],
+		"folder": {
+			"name": "Demo Pipelines"
+		},
 		"annotations": []
 	}
 }
