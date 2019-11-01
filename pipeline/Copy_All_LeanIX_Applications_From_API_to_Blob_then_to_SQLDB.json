@@ -336,6 +336,7 @@
 			},
 			{
 				"name": "Copy_LeanIX_Application_JSON_to_SQLDB",
+				"description": "This pipeline determines the total number of Applications, then goes out and gets 100 at a time from the REST endpoint and putting them into JSON files in BLOB. It then finally makes a copy of the JSON files in blob and inserts them as rows in the LeanIX_Application table in Azure SQLDB.",
 				"type": "Copy",
 				"dependsOn": [
 					{

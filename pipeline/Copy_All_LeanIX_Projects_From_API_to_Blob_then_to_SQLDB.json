@@ -1,7 +1,7 @@
 {
 	"name": "Copy_All_LeanIX_Projects_From_API_to_Blob_then_to_SQLDB",
 	"properties": {
-		"description": "This pipeline uses the maximum pageSize and iterates through using the cursor to get ALL of the Project Factsheets into multiple JSON files in Blob, then to Azure SQLDB",
+		"description": "This pipeline determines the total number of Projects, then goes out and gets 100 at a time from the REST endpoint and putting them into JSON files in BLOB. It then finally makes a copy of the JSON files in blob and inserts them as rows in the LeanIX_Project table in Azure SQLDB.",
 		"activities": [
 			{
 				"name": "GetLeanIXBearerToken",
