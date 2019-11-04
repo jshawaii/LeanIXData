@@ -1,6 +1,7 @@
 {
-	"name": "Copy_LeanIX_Project_Details_JSON_to_Blob",
+	"name": "Copy_LeanIX_Project_Type_JSON_to_Blob_then_SQLDB",
 	"properties": {
+		"description": "This pulls all the project details (per project ID) into its own json in Blob. Then the final Copy Data Activity only extracts the $.Data.Fields[] value (flattening the json) into SQLDB table LeanIX_Project_Details.",
 		"activities": [
 			{
 				"name": "GetAllProjectID",
@@ -168,7 +169,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Output_LeanIX_Project_Details_JSON_Blob",
+									"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
 									"type": "DatasetReference"
 								}
 							]
@@ -177,7 +178,7 @@
 				}
 			},
 			{
-				"name": "Copy_Project_Fields_Name_array_From_Blob_to_SQLDB",
+				"name": "Copy_Project_Fields_array_From_Blob_to_SQLDB_then_SQLDB",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -236,7 +237,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Output_LeanIX_Project_Details_JSON_Blob",
+						"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
 						"type": "DatasetReference"
 					}
 				],
