@@ -12,6 +12,9 @@
 				"defaultValue": " "
 			}
 		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
