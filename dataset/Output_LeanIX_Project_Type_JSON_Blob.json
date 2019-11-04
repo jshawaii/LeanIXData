@@ -1,5 +1,5 @@
 {
-	"name": "Output_LeanIX_Project_Details_JSON_Blob",
+	"name": "Output_LeanIX_Project_Type_JSON_Blob",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADFLabBlob",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "ProjectDetails",
+				"folderPath": "ProjectType",
 				"container": "raw"
 			}
 		}
