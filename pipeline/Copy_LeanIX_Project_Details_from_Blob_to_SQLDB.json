@@ -1,0 +1,75 @@
+{
+	"name": "Copy_LeanIX_Project_Details_from_Blob_to_SQLDB",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_Project_Fields_Name_array_From_Blob_to_SQLDB",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['data']['id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "fields_type_name",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data']['fields']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_Details_JSON_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_Details_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "LeanIX Pipelines (State of Hawaii PoC)/Unit Testing Pipelines"
+		},
+		"annotations": []
+	}
+}

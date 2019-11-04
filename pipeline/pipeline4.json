@@ -1,0 +1,82 @@
+{
+	"name": "pipeline4",
+	"properties": {
+		"activities": [
+			{
+				"name": "CreateSharedkeySignature_Prefix",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "StringToSign",
+					"value": {
+						"value": "@concat(utcnow(),'\\n/saadflabblob/Tables')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "EncodeStringToSign",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "CreateSharedkeySignature_Prefix",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "HMAC-SHA256",
+					"value": "f3da17b7c3676a6f737b28a16fc70bed36f5c51d7cd1b11efae70d0ae59c01a8"
+				}
+			},
+			{
+				"name": "QueryAzureTables",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "EncodeStringToSign",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://saadflabblob.table.core.windows.net/Tables",
+					"method": "POST",
+					"headers": {
+						"Authorization": {
+							"value": "@concat('SharedKeyLite saadflabblob:',variables('HMAC-SHA256') )",
+							"type": "Expression"
+						}
+					},
+					"body": {
+						"TableName": "julianTable"
+					}
+				}
+			}
+		],
+		"variables": {
+			"StringToSign": {
+				"type": "String"
+			},
+			"HMAC-SHA256": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "SF Dept of Public Works"
+		},
+		"annotations": []
+	}
+}
