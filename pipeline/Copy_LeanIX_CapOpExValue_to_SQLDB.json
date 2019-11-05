@@ -29,40 +29,9 @@
 				}
 			},
 			{
-				"name": "GetLeanIXBearerToken",
-				"type": "WebActivity",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
-					"method": "POST",
-					"headers": {
-						"Authorization": {
-							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
-							"type": "Expression"
-						},
-						"Content-Type": "application/x-www-form-urlencoded"
-					},
-					"body": "grant_type=client_credentials"
-				}
-			},
-			{
 				"name": "GetProjectCapExOpExValue_JSON_into_Blob",
 				"type": "ForEach",
 				"dependsOn": [
-					{
-						"activity": "GetLeanIXBearerToken",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
 					{
 						"activity": "GetAllProjectID_With_CapExandOpEx",
 						"dependencyConditions": [
@@ -73,7 +42,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetAllProjectID').output.value",
+						"value": "@activity('GetAllProjectID_With_CapExandOpEx').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -81,7 +50,14 @@
 						{
 							"name": "Dynamically build the RelativeURL Step 1",
 							"type": "SetVariable",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "GetLeanIXBearerToken",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "ProjectID",
@@ -173,6 +149,31 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "GetLeanIXBearerToken",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
+								"method": "POST",
+								"headers": {
+									"Authorization": {
+										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"type": "Expression"
+									},
+									"Content-Type": "application/x-www-form-urlencoded"
+								},
+								"body": "grant_type=client_credentials"
+							}
 						}
 					]
 				}
@@ -228,6 +229,15 @@
 								},
 								"sink": {
 									"name": "fields_type_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['data']['value']"
+								},
+								"sink": {
+									"name": "value",
 									"type": "String"
 								}
 							}
