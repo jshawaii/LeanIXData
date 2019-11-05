@@ -27,40 +27,9 @@
 				}
 			},
 			{
-				"name": "GetLeanIXBearerToken",
-				"type": "WebActivity",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
-					"method": "POST",
-					"headers": {
-						"Authorization": {
-							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
-							"type": "Expression"
-						},
-						"Content-Type": "application/x-www-form-urlencoded"
-					},
-					"body": "grant_type=client_credentials"
-				}
-			},
-			{
 				"name": "GetUserGroupRelations_JSON_into_SQLDB",
 				"type": "ForEach",
 				"dependsOn": [
-					{
-						"activity": "GetLeanIXBearerToken",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
 					{
 						"activity": "GetAllUserGroupID",
 						"dependencyConditions": [
@@ -79,7 +48,14 @@
 						{
 							"name": "Dynamically build the RelativeURL Step 1",
 							"type": "SetVariable",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "GetLeanIXBearerToken",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "UserGroupID",
@@ -242,6 +218,31 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "GetLeanIXBearerToken",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"url": "https://hawaii.leanix.net/services/mtm/v1/oauth2/token",
+								"method": "POST",
+								"headers": {
+									"Authorization": {
+										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"type": "Expression"
+									},
+									"Content-Type": "application/x-www-form-urlencoded"
+								},
+								"body": "grant_type=client_credentials"
+							}
 						}
 					]
 				}

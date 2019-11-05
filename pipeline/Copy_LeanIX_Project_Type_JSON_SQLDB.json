@@ -67,6 +67,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "LeanIX Pipelines (State of Hawaii PoC)/Unit Testing Pipelines"
+		},
 		"annotations": []
 	}
 }
