@@ -21,7 +21,7 @@ The capabilities built into this lab are:
   
 ## Use case/customer scenarios
 
-### State of Hawaii - LeanIX Pipelines and DataSets - This is the most extensive customer PoC
+### State of Hawaii - LeanIX Pipelines and DataSets
 [MSX ID:7-UFW52PVX TPID:1299547  Contact: Jussi.Sipola@hawaii.gov](https://microsoftsales.crm.dynamics.com/main.aspx?appid=fe0c3504-3700-e911-a849-000d3a10b7cc&pagetype=entityrecord&etn=msp_engagement&id=ab6c8d16-1eea-e911-a85d-000d3a10b05d)
 * REST API authentication activity getting and consuming a Bearer token in a Authorization Header
 * Examples of how to pass parameters, using global pipeline variables, and setting dataset() specific paramaters
