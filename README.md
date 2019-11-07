@@ -31,6 +31,8 @@ The capabilities built into this lab are:
 ### San Francisco Department of Public Works
 [MSX ID:7-UENMBVYLG TPID:1312570  Contact: Vincent.Kwok@sfdpw.org](https://microsoftsales.crm.dynamics.com/main.aspx?appid=fe0c3504-3700-e911-a849-000d3a10b7cc&pagetype=entityrecord&etn=msp_engagement&id=1a8822f8-28e6-e911-a862-000d3a10be6f)
 * Consuming Azure Tables REST API
+
+* Lab Blob Storage Service Principal (saadflabblob_sp) client secret: 3AVNdaqxU39-I5u=?DSE]duS6M5OR7f?
   
 ## References
 
