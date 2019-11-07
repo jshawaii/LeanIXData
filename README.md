@@ -92,6 +92,10 @@ The capabilities built into this lab are:
 
 [Authorize requests to Azure Storage](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage)
 
+### Using AAD and Service Principals to access data stored in Storage Accounts (Blobs, etc)
+
+[Use the Portal to Create an AAD App/Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)
+
 ### LeanIX specific references
 
 [LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
