@@ -33,6 +33,8 @@ The capabilities built into this lab are:
 * Consuming Azure Tables REST API
 
 * Lab Blob Storage Service Principal (saadflabblob_sp) client secret: 3AVNdaqxU39-I5u=?DSE]duS6M5OR7f?
+
+* ApplicationID URI: api://d52545c8-7aac-4a05-bf61-ef4beebc522e
   
 ## References
 
