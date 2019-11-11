@@ -102,6 +102,8 @@ The capabilities built into this lab are:
 
 [Authorize access to AAD OAuth 2.0 Code Grant Flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code)
 
+[Methods supported to autorizing access to Azure Storage (note that AAD authorization NOT supported for Azure Files and Azure Tables](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth)
+
 ### LeanIX specific references
 
 [LeanIX Developer Guide and Data Model](https://dev.leanix.net/docs/data-model)
