@@ -96,6 +96,8 @@ The capabilities built into this lab are:
 
 [Authorize requests to Azure Storage](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage)
 
+[C# Code to call Azure Table REST API](https://stackoverflow.com/questions/42805745/how-to-access-azure-table-storage-using-rest-api-in-net-core)
+
 ### Using AAD and Service Principals to access data stored in Storage Accounts (Blobs, etc)
 
 [Use the Portal to Create an AAD App/Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)
