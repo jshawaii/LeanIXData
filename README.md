@@ -98,6 +98,8 @@ The capabilities built into this lab are:
 
 [C# Code to call Azure Table REST API](https://stackoverflow.com/questions/42805745/how-to-access-azure-table-storage-using-rest-api-in-net-core)
 
+[Creating a custom Activity to run a Console Application - Useful to run .EXE files that create HMAC Hash for Azure Table Operations for example](https://mrpaulandrew.com/2018/11/12/creating-an-azure-data-factory-v2-custom-activity/)
+
 ### Using AAD and Service Principals to access data stored in Storage Accounts (Blobs, etc)
 
 [Use the Portal to Create an AAD App/Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)
