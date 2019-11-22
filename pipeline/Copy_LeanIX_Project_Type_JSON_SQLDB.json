@@ -1,9 +1,9 @@
 {
-	"name": "Copy_LeanIX_Project_Details_from_Blob_to_SQLDB",
+	"name": "Copy_LeanIX_Project_Type_JSON_SQLDB",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_Project_Fields_Name_array_From_Blob_to_SQLDB",
+				"name": "Copy_Project_Fields_array_From_Blob_to_SQLDB_then_SQLDB",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -61,7 +61,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_Project_Details_SQLDB",
+						"referenceName": "Output_LeanIX_Project_Type_SQLDB",
 						"type": "DatasetReference"
 					}
 				]

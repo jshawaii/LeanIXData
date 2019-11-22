@@ -1,9 +1,11 @@
 {
-	"name": "Copy_LeanIX_UserGroup_Relations_From_API_to_SQLDB",
+	"name": "Copy_LeanIX_Project_Type_JSON_to_Blob_then_SQLDB",
 	"properties": {
+		"description": "This pulls all the project details (per project ID) into its own json in Blob. Then the final Copy Data Activity only extracts the $.Data.Fields[] value (flattening the json) into SQLDB table LeanIX_Project_Details.",
 		"activities": [
 			{
-				"name": "GetAllUserGroupID",
+				"name": "GetAllProjectID",
+				"description": "Get all the ProjectIDs in the LeanIX_Project table and pass it through to the next activity to retrieve project details for each of the project IDs.",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -17,7 +19,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT id FROM LeanIX_UserGroup"
+						"sqlReaderQuery": "SELECT id FROM LeanIX_Project"
 					},
 					"dataset": {
 						"referenceName": "Output_LeanIX_Project_SQLDB",
@@ -27,11 +29,11 @@
 				}
 			},
 			{
-				"name": "GetUserGroupRelations_JSON_into_SQLDB",
+				"name": "GetProjectDetails_JSON_into_Blob",
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "GetAllUserGroupID",
+						"activity": "GetAllProjectID",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -40,7 +42,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetAllUserGroupID').output.value",
+						"value": "@activity('GetAllProjectID').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -58,7 +60,7 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "UserGroupID",
+								"variableName": "ProjectID",
 								"value": {
 									"value": "@{item().id}",
 									"type": "Expression"
@@ -80,13 +82,13 @@
 							"typeProperties": {
 								"variableName": "FullyFormedRelativeURL",
 								"value": {
-									"value": "@concat(variables('UserGroupID'),'/relations')",
+									"value": "@variables('ProjectID')",
 									"type": "Expression"
 								}
 							}
 						},
 						{
-							"name": "Copy_UserGroup_Relations_JSON_to_Blob",
+							"name": "Copy_Application_Relations_JSON_to_SQLDB",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -118,87 +120,16 @@
 									}
 								},
 								"sink": {
-									"type": "AzureSqlSink"
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings",
+										"quoteAllText": true
+									}
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"mappings": [
-										{
-											"source": {
-												"path": "['id']"
-											},
-											"sink": {
-												"name": "ID",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['displayNameToFS']"
-											},
-											"sink": {
-												"name": "displayNameToFS",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['typeFromFS']"
-											},
-											"sink": {
-												"name": "typeFromFS",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['typeToFS']"
-											},
-											"sink": {
-												"name": "typeToFS",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['status']"
-											},
-											"sink": {
-												"name": "status",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['fromId']"
-											},
-											"sink": {
-												"name": "fromId",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['toId']"
-											},
-											"sink": {
-												"name": "toId",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['type']"
-											},
-											"sink": {
-												"name": "type",
-												"type": "String"
-											}
-										}
-									],
-									"collectionReference": "$['data']"
-								}
+								"enableStaging": false
 							},
 							"inputs": [
 								{
@@ -214,7 +145,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Output_LeanIX_UserGroup_Relations_SQLDB",
+									"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
 									"type": "DatasetReference"
 								}
 							]
@@ -246,19 +177,84 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Copy_Project_Fields_array_From_Blob_to_SQLDB_then_SQLDB",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "GetProjectDetails_JSON_into_Blob",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['data']['id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "fields_type_name",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data']['fields']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_Type_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
-			"ApplicationID": {
-				"type": "String"
-			},
-			"FullyFormedRelativeURL": {
-				"type": "String"
-			},
 			"ProjectID": {
 				"type": "String"
 			},
-			"UserGroupID": {
+			"FullyFormedRelativeURL": {
 				"type": "String"
 			}
 		},

@@ -1,16 +1,16 @@
 {
-	"name": "Output_LeanIX_Project_Details_JSON_Blob",
+	"name": "Output_PortOfTacoma_Videos_Blob",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADFLabBlob",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Json",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "ProjectDetails",
+				"folderPath": "Videos",
 				"container": "raw"
 			}
 		}

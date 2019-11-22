@@ -1,5 +1,5 @@
 {
-	"name": "Output_LeanIX_Project_Details_SQLDB",
+	"name": "Output_LeanIX_Project_CapExOpExOnly",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Azure_SQLDB",
@@ -18,13 +18,12 @@
 			},
 			{
 				"name": "value",
-				"type": "float",
-				"precision": 15
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "LeanIX_Project_Details"
+			"table": "LeanIX_Project_CapOpExDetails"
 		}
 	}
 }

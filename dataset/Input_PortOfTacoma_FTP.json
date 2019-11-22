@@ -1,0 +1,16 @@
+{
+	"name": "Input_PortOfTacoma_FTP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Port_WebFTP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "FtpServerLocation"
+			}
+		}
+	}
+}

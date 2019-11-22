@@ -1,9 +1,10 @@
 {
-	"name": "Copy_LeanIX_Project_Details_from_Blob_to_SQLDB",
+	"name": "Copy_LeanIX_OpExCapExProjectValue_Blob_to_SQLDB",
 	"properties": {
+		"description": "Copying contents from raw/ProjectCapExOpExOnly to SQLDB",
 		"activities": [
 			{
-				"name": "Copy_Project_Fields_Name_array_From_Blob_to_SQLDB",
+				"name": "Copy_Project_Fields_array_From_Blob_to_SQLDB_then_SQLDB",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -48,6 +49,15 @@
 									"name": "fields_type_name",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"path": "['data']['value']"
+								},
+								"sink": {
+									"name": "value",
+									"type": "String"
+								}
 							}
 						],
 						"collectionReference": "$['data']['fields']"
@@ -55,13 +65,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
+						"referenceName": "Output_LeanIX_CapEx_OpEx_ProjectsOnly_Json_Blob",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Output_LeanIX_Project_Details_SQLDB",
+						"referenceName": "Output_LeanIX_Project_CapExOpExOnly",
 						"type": "DatasetReference"
 					}
 				]

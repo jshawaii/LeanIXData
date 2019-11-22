@@ -1,5 +1,5 @@
 {
-	"name": "Copy_LeanIX_Project_Details_from_Blob_to_SQLDB",
+	"name": "pipeline5",
 	"properties": {
 		"activities": [
 			{
@@ -47,6 +47,15 @@
 								"sink": {
 									"name": "fields_type_name",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['data']['value']"
+								},
+								"sink": {
+									"name": "value",
+									"type": "Double"
 								}
 							}
 						],

@@ -1,5 +1,5 @@
 {
-	"name": "Output_LeanIX_Project_Details_SQLDB",
+	"name": "Output_LeanIX_Project_Type_SQLDB",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Azure_SQLDB",
@@ -15,16 +15,11 @@
 			{
 				"name": "fields_type_name",
 				"type": "varchar"
-			},
-			{
-				"name": "value",
-				"type": "float",
-				"precision": 15
 			}
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "LeanIX_Project_Details"
+			"table": "LeanIX_Project_Type"
 		}
 	}
 }
