@@ -1,0 +1,39 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "js-ADFv2"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Port_WebFTP')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Port of Tacoma FTP Server. Creds will only work for 30 days from November 4, 2019",
+				"annotations": [],
+				"type": "FtpServer",
+				"typeProperties": {
+					"host": "Webftp.portoftacoma.com",
+					"port": 21,
+					"enableSsl": true,
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "Portvideotest",
+					"password": {
+						"type": "SecureString",
+						"value": "**********"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
