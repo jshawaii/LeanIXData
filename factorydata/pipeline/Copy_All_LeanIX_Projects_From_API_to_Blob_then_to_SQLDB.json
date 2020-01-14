@@ -325,6 +325,16 @@
 										"enablePartitionDiscovery": false
 									}
 								},
+								"dataset": {
+									"referenceName": "Output_LeanIX_All_Project_Json_to_Blob",
+									"type": "DatasetReference",
+									"parameters": {
+										"FilenameSuffix": {
+											"value": "@concat(variables('CurrentLimit'),'.json')",
+											"type": "Expression"
+										}
+									}
+								},
 								"firstRowOnly": false
 							}
 						},
