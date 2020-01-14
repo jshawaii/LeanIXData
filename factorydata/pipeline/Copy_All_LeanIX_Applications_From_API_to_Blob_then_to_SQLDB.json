@@ -321,6 +321,10 @@
 										"enablePartitionDiscovery": false
 									}
 								},
+								"dataset": {
+									"referenceName": "Output_LeanIX_Application_JSON_to_Blob",
+									"type": "DatasetReference"
+								},
 								"firstRowOnly": false
 							}
 						},
