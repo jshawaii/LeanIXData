@@ -1,0 +1,75 @@
+{
+	"name": "Output_LeanIX_Application_SQLDB",
+	"properties": {
+		"description": "The is the SQLDB dataset that we will use to write the rows of Application factsheets to.",
+		"linkedServiceName": {
+			"referenceName": "LeanIX_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/SQLDB"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "description",
+				"type": "varchar"
+			},
+			{
+				"name": "displayName",
+				"type": "varchar"
+			},
+			{
+				"name": "fullname",
+				"type": "varchar"
+			},
+			{
+				"name": "type",
+				"type": "varchar"
+			},
+			{
+				"name": "createdAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "updatedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "status",
+				"type": "varchar"
+			},
+			{
+				"name": "level",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "score",
+				"type": "varchar"
+			},
+			{
+				"name": "rev",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LeanIX_Application"
+		}
+	}
+}
