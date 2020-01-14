@@ -216,7 +216,10 @@
 									"referenceName": "Input_LeanIX_Application_100_JSO",
 									"type": "DatasetReference",
 									"parameters": {
-										"Cursor": " @variables('Cursor')"
+										"Cursor": {
+											"value": "@variables('Cursor')",
+											"type": "Expression"
+										}
 									}
 								}
 							],
