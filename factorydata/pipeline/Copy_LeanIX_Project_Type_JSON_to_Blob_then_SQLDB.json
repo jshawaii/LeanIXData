@@ -21,6 +21,10 @@
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": "SELECT id FROM LeanIX_Project"
 					},
+					"dataset": {
+						"referenceName": "Output_LeanIX_Project_SQLDB",
+						"type": "DatasetReference"
+					},
 					"firstRowOnly": false
 				}
 			},
@@ -126,7 +130,25 @@
 									}
 								},
 								"enableStaging": false
-							}
+							},
+							"inputs": [
+								{
+									"referenceName": "Output_LeanIX_Relations",
+									"type": "DatasetReference",
+									"parameters": {
+										"FullyFormedRelativeURL": {
+											"value": "@variables('FullyFormedRelativeURL')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
+									"type": "DatasetReference"
+								}
+							]
 						},
 						{
 							"name": "GetLeanIXBearerToken",
@@ -145,7 +167,7 @@
 								"method": "POST",
 								"headers": {
 									"Authorization": {
-										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 										"type": "Expression"
 									},
 									"Content-Type": "application/x-www-form-urlencoded"
@@ -188,8 +210,44 @@
 					"sink": {
 						"type": "AzureSqlSink"
 					},
-					"enableStaging": false
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['data']['id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "fields_type_name",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data']['fields']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_Type_JSON_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_Type_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
