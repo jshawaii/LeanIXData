@@ -21,6 +21,10 @@
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": "SELECT * FROM dbo.LeanIX_Project_Type WHERE [fields_type_name] = 'budgetOpEx' OR [fields_type_name] = 'budgetCapEx'"
 					},
+					"dataset": {
+						"referenceName": "Output_LeanIX_Project_Type_SQLDB",
+						"type": "DatasetReference"
+					},
 					"firstRowOnly": false
 				}
 			},
@@ -188,8 +192,53 @@
 					"sink": {
 						"type": "AzureSqlSink"
 					},
-					"enableStaging": false
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['data']['id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "fields_type_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['data']['value']"
+								},
+								"sink": {
+									"name": "value",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data']['fields']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Output_LeanIX_CapEx_OpEx_ProjectsOnly_Json_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_CapExOpExOnly",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
