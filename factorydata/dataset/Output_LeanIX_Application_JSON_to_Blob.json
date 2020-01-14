@@ -5,6 +5,11 @@
 			"referenceName": "LeanIXBlob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FilenameSuffix": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "LeanIX DataSets/JSON"
 		},
@@ -13,7 +18,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Application.json",
+				"fileName": {
+					"value": "@concat('Application-',dataset().FilenameSuffix)",
+					"type": "Expression"
+				},
+				"folderPath": "Application",
 				"container": "raw"
 			}
 		}
