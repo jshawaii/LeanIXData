@@ -19,6 +19,10 @@
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": "SELECT id FROM LeanIX_Application"
 					},
+					"dataset": {
+						"referenceName": "Output_LeanIX_Application_SQLDB",
+						"type": "DatasetReference"
+					},
 					"firstRowOnly": false
 				}
 			},
@@ -116,8 +120,104 @@
 								"sink": {
 									"type": "AzureSqlSink"
 								},
-								"enableStaging": false
-							}
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "['id']"
+											},
+											"sink": {
+												"name": "ID",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['displayNameToFS']"
+											},
+											"sink": {
+												"name": "displayNameToFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['typeFromFS']"
+											},
+											"sink": {
+												"name": "typeFromFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['typeToFS']"
+											},
+											"sink": {
+												"name": "typeToFS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['status']"
+											},
+											"sink": {
+												"name": "status",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['fromId']"
+											},
+											"sink": {
+												"name": "fromId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['toId']"
+											},
+											"sink": {
+												"name": "toId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['type']"
+											},
+											"sink": {
+												"name": "type",
+												"type": "String"
+											}
+										}
+									],
+									"collectionReference": "$['data']"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "Output_LeanIX_Relations",
+									"type": "DatasetReference",
+									"parameters": {
+										"FullyFormedRelativeURL": {
+											"value": "@variables('FullyFormedRelativeURL')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_Application_Relations_SQLDB",
+									"type": "DatasetReference"
+								}
+							]
 						},
 						{
 							"name": "GetLeanIXBearerToken",
@@ -136,7 +236,7 @@
 								"method": "POST",
 								"headers": {
 									"Authorization": {
-										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 										"type": "Expression"
 									},
 									"Content-Type": "application/x-www-form-urlencoded"
