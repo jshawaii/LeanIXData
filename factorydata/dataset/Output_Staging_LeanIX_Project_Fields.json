@@ -1,0 +1,28 @@
+{
+	"name": "Output_Staging_LeanIX_Project_Fields",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "fields",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Staging_LeanIX_Project_Fields"
+		}
+	}
+}
