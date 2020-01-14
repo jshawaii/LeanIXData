@@ -1,0 +1,21 @@
+{
+	"name": "Output_LeanIX_Project_JSON_to_BLOB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIXBlob",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "project.json",
+				"container": "raw"
+			}
+		}
+	}
+}

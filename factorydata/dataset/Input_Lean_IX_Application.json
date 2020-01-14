@@ -1,0 +1,18 @@
+{
+	"name": "Input_Lean_IX_Application",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "?type=Application&pagesize=100&permissions=false"
+		},
+		"schema": []
+	}
+}

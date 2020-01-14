@@ -1,0 +1,518 @@
+{
+	"name": "Output_Test_HI_LeanIX_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIXBlob",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Application2.json",
+				"container": "raw"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string"
+				},
+				"errors": {
+					"type": "array"
+				},
+				"total": {
+					"type": "integer"
+				},
+				"data": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string"
+							},
+							"name": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							},
+							"displayName": {
+								"type": "string"
+							},
+							"fullName": {
+								"type": "string"
+							},
+							"type": {
+								"type": "string"
+							},
+							"tags": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string"
+										},
+										"tagGroup": {
+											"type": "object",
+											"properties": {
+												"id": {
+													"type": "string"
+												},
+												"name": {
+													"type": "string"
+												},
+												"shortName": {
+													"type": "string"
+												},
+												"description": {
+													"type": "string"
+												},
+												"mode": {
+													"type": "string"
+												},
+												"restrictToFactSheetTypes": {
+													"type": "array",
+													"items": {
+														"type": "string"
+													}
+												}
+											}
+										},
+										"name": {
+											"type": "string"
+										},
+										"description": {
+											"type": "null"
+										},
+										"bgColor": {
+											"type": "string"
+										},
+										"status": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"fields": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"data": {
+											"type": "object",
+											"properties": {
+												"type": {
+													"type": "string"
+												},
+												"phases": {
+													"type": "array",
+													"items": {
+														"type": "object",
+														"properties": {
+															"startDate": {
+																"type": "string"
+															},
+															"phase": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											}
+										},
+										"dataType": {
+											"type": "null"
+										}
+									}
+								}
+							},
+							"relations": {
+								"type": "array"
+							},
+							"completion": {
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string"
+									},
+									"completion": {
+										"type": "number"
+									},
+									"percentage": {
+										"type": "integer"
+									},
+									"subCompletions": {
+										"type": "object",
+										"properties": {
+											"section.information": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.nameDescription.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.lifecycle.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.successors.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.predecessors.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											"section.projectSetup": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.projectProviders.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.projectBenefit.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.budgetCosts.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											"section.dependencies": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.children.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.requiredBy.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.parents.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.requires.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											"section.projectEnvironment": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"completion": {
+														"type": "number"
+													},
+													"percentage": {
+														"type": "integer"
+													},
+													"subCompletions": {
+														"type": "object",
+														"properties": {
+															"subsection.factSheetsAffected.label__": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.projectValueRisk.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.factSheetsAffected.label": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.factSheetsAffected.label___": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.factSheetsAffected.label____": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															},
+															"subsection.factSheetsAffected.label_": {
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string"
+																	},
+																	"completion": {
+																		"type": "number"
+																	},
+																	"percentage": {
+																		"type": "integer"
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							},
+							"createdAt": {
+								"type": "string"
+							},
+							"updatedAt": {
+								"type": "string"
+							},
+							"documents": {
+								"type": "array"
+							},
+							"status": {
+								"type": "string"
+							},
+							"level": {
+								"type": "integer"
+							},
+							"score": {
+								"type": "string"
+							},
+							"rev": {
+								"type": "integer"
+							},
+							"naFields": {
+								"type": "array"
+							},
+							"subscriptions": {
+								"type": "array"
+							},
+							"permittedReadACL": {
+								"type": "array"
+							},
+							"permittedWriteACL": {
+								"type": "array"
+							}
+						}
+					}
+				},
+				"cursor": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

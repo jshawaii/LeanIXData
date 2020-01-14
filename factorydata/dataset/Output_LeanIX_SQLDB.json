@@ -1,0 +1,15 @@
+{
+	"name": "Output_LeanIX_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/SQLDB"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

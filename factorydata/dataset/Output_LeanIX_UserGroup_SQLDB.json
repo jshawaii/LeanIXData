@@ -1,0 +1,70 @@
+{
+	"name": "Output_LeanIX_UserGroup_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/SQLDB"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "displayName",
+				"type": "varchar"
+			},
+			{
+				"name": "fullname",
+				"type": "varchar"
+			},
+			{
+				"name": "type",
+				"type": "varchar"
+			},
+			{
+				"name": "createdAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "updatedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "level",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "score",
+				"type": "varchar"
+			},
+			{
+				"name": "rev",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "status",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LeanIX_UserGroup"
+		}
+	}
+}
