@@ -199,6 +199,16 @@
 										}
 									}
 								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings",
+										"quoteAllText": true
+									}
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -206,7 +216,19 @@
 									"referenceName": "Input_LeanIX_Application_100_JSO",
 									"type": "DatasetReference",
 									"parameters": {
-										"Cursor": " "
+										"Cursor": " @variables('Cursor')"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_All_Application_Json_to_Blob",
+									"type": "DatasetReference",
+									"parameters": {
+										"FilenameSuffix": {
+											"value": "@concat(variables('CurrentLimit'),'.json')",
+											"type": "Expression"
+										}
 									}
 								}
 							]
