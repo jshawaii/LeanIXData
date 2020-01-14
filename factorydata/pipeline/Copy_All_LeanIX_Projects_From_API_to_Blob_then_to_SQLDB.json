@@ -20,7 +20,7 @@
 					"method": "POST",
 					"headers": {
 						"Authorization": {
-							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+							"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 							"type": "Expression"
 						},
 						"Content-Type": "application/x-www-form-urlencoded"
@@ -211,7 +211,31 @@
 									}
 								},
 								"enableStaging": false
-							}
+							},
+							"inputs": [
+								{
+									"referenceName": "Input_100_LeanIX_Project_JSON",
+									"type": "DatasetReference",
+									"parameters": {
+										"Cursor": {
+											"value": "@variables('Cursor')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_All_Project_Json_to_Blob",
+									"type": "DatasetReference",
+									"parameters": {
+										"FilenameSuffix": {
+											"value": "@concat(variables('CurrentLimit'),'.json')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						},
 						{
 							"name": "SetCurrentCursor",
@@ -321,12 +345,14 @@
 								"method": "POST",
 								"headers": {
 									"Authorization": {
-										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 										"type": "Expression"
 									},
 									"Content-Type": "application/x-www-form-urlencoded"
 								},
-								"body": "grant_type=client_credentials"
+								"body": "grant_type=client_credentials",
+								"linkedServices": [],
+								"datasets": []
 							}
 						}
 					],
