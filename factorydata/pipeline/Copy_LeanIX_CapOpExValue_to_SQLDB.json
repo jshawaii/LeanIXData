@@ -130,7 +130,25 @@
 									}
 								},
 								"enableStaging": false
-							}
+							},
+							"inputs": [
+								{
+									"referenceName": "Output_LeanIX_Relations",
+									"type": "DatasetReference",
+									"parameters": {
+										"FullyFormedRelativeURL": {
+											"value": "@variables('FullyFormedRelativeURL')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_CapEx_OpEx_ProjectsOnly_Json_Blob",
+									"type": "DatasetReference"
+								}
+							]
 						},
 						{
 							"name": "GetLeanIXBearerToken",
@@ -149,7 +167,7 @@
 								"method": "POST",
 								"headers": {
 									"Authorization": {
-										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 										"type": "Expression"
 									},
 									"Content-Type": "application/x-www-form-urlencoded"
