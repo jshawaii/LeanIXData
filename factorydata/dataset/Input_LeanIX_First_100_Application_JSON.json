@@ -1,0 +1,18 @@
+{
+	"name": "Input_LeanIX_First_100_Application_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "?type=Application&pageSize=100&permissions=false",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

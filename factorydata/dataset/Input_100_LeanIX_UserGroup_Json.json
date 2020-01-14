@@ -1,0 +1,23 @@
+{
+	"name": "Input_100_LeanIX_UserGroup_Json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Cursor": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('?type=UserGroup&pageSize=100&permissions=false&cursor=',dataset().Cursor)",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

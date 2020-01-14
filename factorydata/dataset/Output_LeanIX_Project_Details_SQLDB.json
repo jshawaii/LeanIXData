@@ -1,0 +1,30 @@
+{
+	"name": "Output_LeanIX_Project_Details_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "varchar"
+			},
+			{
+				"name": "fields_type_name",
+				"type": "varchar"
+			},
+			{
+				"name": "value",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LeanIX_Project_Details"
+		}
+	}
+}
