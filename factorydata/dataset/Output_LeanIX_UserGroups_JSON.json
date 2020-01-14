@@ -1,0 +1,21 @@
+{
+	"name": "Output_LeanIX_UserGroups_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIXBlob",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "LeanIX DataSets/JSON"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "UserGroups.json",
+				"container": "raw"
+			}
+		}
+	}
+}
