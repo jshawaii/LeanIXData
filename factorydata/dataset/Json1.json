@@ -5,6 +5,9 @@
 			"referenceName": "LeanIXBlob",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "LeanIX DataSets/Templates"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {

@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "LeanIX DataSets"
+			"name": "LeanIX DataSets/SQLDB"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",

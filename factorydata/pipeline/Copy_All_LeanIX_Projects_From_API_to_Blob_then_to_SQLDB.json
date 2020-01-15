@@ -20,7 +20,7 @@
 					"method": "POST",
 					"headers": {
 						"Authorization": {
-							"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+							"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 							"type": "Expression"
 						},
 						"Content-Type": "application/x-www-form-urlencoded"
@@ -211,7 +211,31 @@
 									}
 								},
 								"enableStaging": false
-							}
+							},
+							"inputs": [
+								{
+									"referenceName": "Input_100_LeanIX_Project_JSON",
+									"type": "DatasetReference",
+									"parameters": {
+										"Cursor": {
+											"value": "@variables('Cursor')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_LeanIX_All_Project_Json_to_Blob",
+									"type": "DatasetReference",
+									"parameters": {
+										"FilenameSuffix": {
+											"value": "@concat(variables('CurrentLimit'),'.json')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						},
 						{
 							"name": "SetCurrentCursor",
@@ -301,6 +325,16 @@
 										"enablePartitionDiscovery": false
 									}
 								},
+								"dataset": {
+									"referenceName": "Output_LeanIX_All_Project_Json_to_Blob",
+									"type": "DatasetReference",
+									"parameters": {
+										"FilenameSuffix": {
+											"value": "@concat(variables('CurrentLimit'),'.json')",
+											"type": "Expression"
+										}
+									}
+								},
 								"firstRowOnly": false
 							}
 						},
@@ -321,12 +355,14 @@
 								"method": "POST",
 								"headers": {
 									"Authorization": {
-										"value": "@concat('Basic ',base64('apitoken:4Arc6CbO95yxTF5LdVaxfXRUt2gzrO3WQ5v9Cafu'))",
+										"value": "@concat('Basic ',base64('apitoken:99yxDCreCvFnCXxKCpEL6cvpgOrahsTGfQG9JxXO'))",
 										"type": "Expression"
 									},
 									"Content-Type": "application/x-www-form-urlencoded"
 								},
-								"body": "grant_type=client_credentials"
+								"body": "grant_type=client_credentials",
+								"linkedServices": [],
+								"datasets": []
 							}
 						}
 					],
@@ -365,8 +401,134 @@
 					"sink": {
 						"type": "AzureSqlSink"
 					},
-					"enableStaging": false
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								},
+								"sink": {
+									"name": "description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['displayName']"
+								},
+								"sink": {
+									"name": "displayName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['fullName']"
+								},
+								"sink": {
+									"name": "fullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['type']"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['createdAt']"
+								},
+								"sink": {
+									"name": "createdAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['updatedAt']"
+								},
+								"sink": {
+									"name": "updatedAt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['status']"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['level']"
+								},
+								"sink": {
+									"name": "level",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['score']"
+								},
+								"sink": {
+									"name": "score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['rev']"
+								},
+								"sink": {
+									"name": "rev",
+									"type": "Int32"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "All_LeanIX_Project_Json_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_Project_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {

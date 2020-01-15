@@ -1,6 +1,9 @@
 {
 	"name": "RestResource1",
 	"properties": {
+		"folder": {
+			"name": "LeanIX DataSets/Templates"
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"schema": []

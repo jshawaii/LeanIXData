@@ -12,7 +12,7 @@
 			}
 		},
 		"folder": {
-			"name": "LeanIX DataSets"
+			"name": "LeanIX DataSets/REST"
 		},
 		"annotations": [],
 		"type": "RestResource",
