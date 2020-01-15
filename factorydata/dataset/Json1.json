@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "LeanIX DataSets/Template"
+			"name": "LeanIX DataSets/Templates"
 		},
 		"annotations": [],
 		"type": "Json",
