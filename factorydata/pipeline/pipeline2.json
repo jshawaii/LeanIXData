@@ -34,7 +34,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['id']"
+									"path": "['tags'][0]['id']"
 								},
 								"sink": {
 									"name": "TagID",
@@ -43,15 +43,24 @@
 							},
 							{
 								"source": {
-									"path": "['name']"
+									"path": "['tags'][0]['name']"
 								},
 								"sink": {
 									"name": "TagName",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "ApplicationID",
+									"type": "String"
+								}
 							}
 						],
-						"collectionReference": "$['data'][0]['tags']"
+						"collectionReference": "$['data']"
 					}
 				},
 				"inputs": [
