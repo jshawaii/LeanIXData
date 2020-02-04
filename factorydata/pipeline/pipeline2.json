@@ -1,0 +1,76 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_LeanIX_ApplicationTag_JSON_to_SQLDB",
+				"description": "This pipeline determines the total number of Applications, then goes out and gets 100 at a time from the REST endpoint and putting them into JSON files in BLOB. It then extracts just the Tag (not TagGroup) JSON information to ApplicationTag table in SQLDB.",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "TagID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "TagName",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data'][0]['tags']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "All_LeanIX_Application_Json_Blob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Output_LeanIX_ApplicationTag_SQLDB",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "LeanIX Pipelines (State of Hawaii PoC)/Dev Pipeline"
+		},
+		"annotations": []
+	}
+}
