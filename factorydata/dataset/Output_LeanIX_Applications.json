@@ -1,0 +1,23 @@
+{
+	"name": "Output_LeanIX_Applications",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FullyFormedRelativeURL": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().FullyFormedRelativeURL",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

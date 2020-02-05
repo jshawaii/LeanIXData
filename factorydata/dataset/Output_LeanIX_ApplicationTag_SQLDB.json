@@ -1,0 +1,29 @@
+{
+	"name": "Output_LeanIX_ApplicationTag_SQLDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LeanIX_SQLDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ApplicationID",
+				"type": "varchar"
+			},
+			{
+				"name": "TagID",
+				"type": "varchar"
+			},
+			{
+				"name": "TagName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ApplicationTag"
+		}
+	}
+}
