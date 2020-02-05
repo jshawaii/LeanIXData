@@ -5,6 +5,11 @@
 			"referenceName": "LeanIX",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FullyFormedRelativeURL": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"schema": []
